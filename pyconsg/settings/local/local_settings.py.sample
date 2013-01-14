@@ -1,0 +1,51 @@
+"""Local settings for the pyconsg project."""
+import os
+
+from pyconsg.settings.base_settings import PROJECT_ROOT
+
+
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
+
+# =============================================================================
+# DATABASE SETTINGS
+# =============================================================================
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.  # NOPEP8
+        'NAME': 'pyconsg',                      # Or path to database file if using sqlite3.  # NOPEP8
+        'USER': 'pyconsg',                      # Not used with sqlite3.
+        'PASSWORD': 'pyconsg',                  # Not used with sqlite3.
+        'HOST': 'localhost',                    # Set to empty string for localhost. Not used with sqlite3.  # NOPEP8
+        'PORT': '',                             # Set to empty string for default. Not used with sqlite3.  # NOPEP8
+    }
+}
+
+
+# =============================================================================
+# EMAIL SETTINGS
+# =============================================================================
+ADMINS = (
+    # ('Your Name', 'yourmail@gmail.com'),
+)
+
+MANAGERS = ADMINS
+
+
+# =============================================================================
+# FOLDER SETTINGS
+# =============================================================================
+
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+# Example: "/home/media/media.lawrence.com/media/"
+
+# Point this to a path outside of your project root because otherwise you might
+# accidentally commit static and media files when setting DEBUG = False for
+# testing purposes.
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../../pyconsg_media')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, '../../pyconsg_static')
+
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = 'http://www.miniwebtool.com/django-secret-key-generator/'

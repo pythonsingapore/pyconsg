@@ -1,0 +1,3 @@
+*.pyc
+coverage/
+local_settings.py
