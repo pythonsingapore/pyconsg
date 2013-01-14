@@ -6,4 +6,5 @@ from pyconsg.settings.middleware_settings import *
 from pyconsg.settings.staticfiles_settings import *
 from pyconsg.settings.template_settings import *
 from pyconsg.settings.logging_settings import *
+from pyconsg.settings.fabfile_settings import *
 from pyconsg.settings.local.local_settings import *
