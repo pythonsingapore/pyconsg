@@ -11,5 +11,5 @@ from fabric.api import local
 def html():
     """Generates the api-doc and the html output."""
     local('rm -rf source/api')
-    local('sphinx-apidoc -f -o source/api ..')
+    local('sphinx-apidoc -f -o source/api ../pyconsg')
     local('make html')
