@@ -2,7 +2,9 @@
 # Django packages
 # =============================================================================
 Django==1.4.3
+django-admin-honeypot==0.2.4
 django-development-fabfile==0.2
+South==0.7.6
 
 
 # =============================================================================
@@ -11,3 +13,4 @@ django-development-fabfile==0.2
 Fabric==1.5.1
 flake8==1.7.0
 psycopg2==2.4.6
+Sphinx==1.1.3

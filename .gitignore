@@ -1,3 +1,5 @@
 *.pyc
 coverage/
+docs/build/
+docs/source/api/
 local_settings.py

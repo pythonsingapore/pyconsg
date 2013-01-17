@@ -6,11 +6,18 @@ from pyconsg.settings.base_settings import PROJECT_ROOT
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+ADMIN_URL = r'^admin/'
 
 
 # =============================================================================
 # DATABASE SETTINGS
 # =============================================================================
+
+# First create your DB role like so:
+# CREATE ROLE pyconsg LOGIN CREATEDB VALID UNTIL 'infinity';
+
+# Then run `fab rebuild` to create the database.
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.  # NOPEP8
@@ -22,6 +29,9 @@ DATABASES = {
     }
 }
 
+# Set this to your postgres superuser. If you are using postgres.app on OSX,
+# this is usually your OS login name.
+# LOCAL_PG_ADMIN_ROLE = 'username'
 
 # =============================================================================
 # EMAIL SETTINGS

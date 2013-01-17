@@ -12,7 +12,9 @@ DJANGO_APPS = [
     # 'django.contrib.admindocs',
 ]
 
-EXTERNAL_APPS = []
+EXTERNAL_APPS = [
+    'south',
+]
 
 # We are splitting up the INSTALLED_APPS setting because this is helpful when
 # running tests and creating coverage output only for our own internal apps.
