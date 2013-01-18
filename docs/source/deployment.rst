@@ -122,6 +122,28 @@ load some fixtures into the database::
     # Enter the DB password
     # Enter the email password
 
+
+Change Apache settings
+----------------------
+
+When Webfaction sets up the Apache webserver it assumes that the project is
+names `myproject` but in our case it is named `pyconsg`. Therefore we need
+to change some paths in the `httpd.conf` file::
+
+    vim ~/webapps/pyconsg_django/apache2/conf/httpd.conf
+
+Make sure that the wsgi part of the config looks like this::
+
+    WSGIDaemonProcess pyconsg_django processes=2 threads=12 python-path=/home/pyconsg/webapps/pyconsg_django:/home/pyconsg/webapps/pyconsg_django/pyconsg:/home/pyconsg/Envs/pyconsg/lib/python2.7/site-packages
+    WSGIProcessGroup pyconsg_django
+    WSGIRestrictEmbedded On
+    WSGILazyInitialization On
+    WSGIScriptAlias / /home/pyconsg/webapps/pyconsg_django/pyconsg/pyconsg/wsgi.py
+
+After changing the config, restart apache like so::
+
+    ~/webapps/pyconsg_django/apache2/bin/restart
+
 At this point you should be able to visit https://username.webfactional.com
 and see the PyCon SG website, setup with some fixtures as test data.
 
