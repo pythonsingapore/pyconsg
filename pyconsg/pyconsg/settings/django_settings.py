@@ -30,3 +30,5 @@ ROOT_URLCONF = 'pyconsg.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'pyconsg.wsgi.application'
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"

@@ -1,10 +1,39 @@
+--extra-index-url=http://dist.pinaxproject.com/dev/
+--extra-index-url=http://dist.pinaxproject.com/alpha/
+--extra-index-url=http://dist.pinaxproject.com/fresh-start/
+
 # =============================================================================
 # Django packages
 # =============================================================================
 Django==1.4.3
 django-admin-honeypot==0.2.4
 django-development-fabfile==0.3.1
+django-debug-toolbar==0.9.4
+django-libs==0.14.1
 South==0.7.6
+
+
+# =============================================================================
+# Symposion related packages
+# =============================================================================
+django-user-accounts==1.0b7
+pinax-theme-bootstrap==2.2.2
+pinax-theme-bootstrap-account==1.0b2
+django-forms-bootstrap==2.0.3.post1
+metron==0.1 # 0.2.dev3
+pinax-utils==1.0b1.dev3
+django-mailer==0.2a1
+django-timezones==0.2
+pytz==2012g
+django-model-utils==1.1.0
+django-taggit==0.9.3
+django-reversion==1.6.4
+django-markitup==1.0.0
+markdown==2.2.0
+django-sitetree==0.9.1
+PIL==1.1.7
+easy-thumbnails==1.1
+-e git+git://github.com/pinax/symposion.git@292bf16a3e16de7dbf97b8e8fb4cf6b5e7f121b4#egg=symposion
 
 
 # =============================================================================

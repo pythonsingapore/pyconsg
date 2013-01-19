@@ -6,6 +6,7 @@ from pyconsg.settings.base_settings import PROJECT_ROOT
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+EMAIL_DEBUG = DEBUG
 ADMIN_URL = r'^admin/'
 
 
@@ -41,6 +42,52 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+
+
+# ============================================================================
+# Local Development Email Settings
+# comment these on the production server
+# ============================================================================
+
+# When you are playing around with the app and you expect that an email should
+# have been sent, just run `./manage.py send_mail` and you will get the mail
+# to the ADMINS account, no matter who the real recipient was.
+MAILER_EMAIL_BACKEND = 'django_libs.test_email_backend.EmailBackend'
+TEST_EMAIL_BACKEND_RECIPIENTS = ADMINS
+
+FROM_EMAIL = ADMINS[0][1]
+EMAIL_SUBJECT_PREFIX = '[dev pyconsg] '
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = FROM_EMAIL
+
+# Enter your gmail PW from the ADMINS email entered above.
+EMAIL_HOST_PASSWORD = 'yourgmailpw'
+EMAIL_PORT = 587
+
+
+# ============================================================================
+# Production Server Settings Email Settings
+# uncomment these on the production server
+# ============================================================================
+
+# TODO: Which will be our pyconsg email?
+#FROM_EMAIL = "mbrochh@gmail.com"
+#EMAIL_SUBJECT_PREFIX = '[pyconsg] '
+
+#EMAIL_HOST = 'smtp.webfaction.com'
+#EMAIL_HOST_USER = 'pyconsg'
+#EMAIL_HOST_PASSWORD = ""
+#EMAIL_PORT = 25
+
+
+# ============================================================================
+# More general email settings
+# ============================================================================
+DEFAULT_FROM_EMAIL = FROM_EMAIL
+SERVER_EMAIL = FROM_EMAIL
+EMAIL_USE_TLS = True
+
 
 
 # =============================================================================
