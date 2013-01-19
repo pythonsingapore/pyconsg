@@ -1,7 +1,8 @@
 """Django settings for pyconsg project."""
+import os
 
-DEBUG = False
-TEMPLATE_DEBUG = DEBUG
+from pyconsg.settings.base_settings import PROJECT_ROOT
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -32,3 +33,7 @@ ROOT_URLCONF = 'pyconsg.urls'
 WSGI_APPLICATION = 'pyconsg.wsgi.application'
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+FIXTURE_DIRS = (
+    os.path.join(PROJECT_ROOT, 'pyconsg/fixtures'),
+)

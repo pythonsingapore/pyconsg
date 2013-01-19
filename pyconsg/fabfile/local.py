@@ -50,20 +50,17 @@ def dumpdata():
     get a full initial dump when running this task.
 
     """
-    local('python2.7 ./manage.py dumpdata --indent 4 --natural auth --exclude auth.permission > pyconsg/fixtures/bootstrap_auth.json')  # NOPEP8
-    #local('python2.7 ./manage.py dumpdata --indent 4 --natural registration > pyconsg/fixtures/bootstrap_registration.json')  # NOPEP8
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural auth.user > pyconsg/fixtures/bootstrap_auth.json')  # NOPEP8
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural account > pyconsg/fixtures/bootstrap_account.json')  # NOPEP8
     local('python2.7 ./manage.py dumpdata --indent 4 --natural sites > pyconsg/fixtures/bootstrap_sites.json')  # NOPEP8
-    #local('python2.7 ./manage.py dumpdata --indent 4 --natural cms.placeholder > pyconsg/fixtures/bootstrap_cms.json')  # NOPEP8
-    #local('python2.7 ./manage.py dumpdata --indent 4 --natural cms --exclude cms.placeholder > pyconsg/fixtures/bootstrap_cms2.json')  # NOPEP8
-    #local('python2.7 ./manage.py dumpdata --indent 4 --natural text > pyconsg/fixtures/bootstrap_cms_plugins_text.json')  # NOPEP8
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural conference > pyconsg/fixtures/bootstrap_conference.json')  # NOPEP8
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural proposals > pyconsg/fixtures/bootstrap_proposals.json')  # NOPEP8
 
 
 def loaddata():
     """Loads available fixtures."""
     local('python2.7 manage.py loaddata bootstrap_auth.json')
-    #local('python2.7 manage.py loaddata bootstrap_registration.json')
+    local('python2.7 manage.py loaddata bootstrap_account.json')
     local('python2.7 manage.py loaddata bootstrap_sites.json')
-    #local('python2.7 manage.py loaddata bootstrap_cms.json')
-    #local('python2.7 manage.py loaddata bootstrap_cms2.json')
-    #local('python2.7 manage.py loaddata bootstrap_cms_plugins_text.json')
-    #local('python2.7 manage.py loaddata bootstrap.json')
+    local('python2.7 manage.py loaddata bootstrap_conference.json')
+    local('python2.7 manage.py loaddata bootstrap_proposals.json')

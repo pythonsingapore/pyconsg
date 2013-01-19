@@ -1,0 +1,45 @@
+[
+    {
+        "pk": 1, 
+        "model": "conference.conference", 
+        "fields": {
+            "timezone": "Asia/Singapore", 
+            "start_date": "2013-06-13", 
+            "end_date": "2013-06-15", 
+            "title": "PyCon Singapore 2013"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "conference.section", 
+        "fields": {
+            "conference": 1, 
+            "start_date": "2013-06-13", 
+            "name": "Tutorials", 
+            "end_date": "2013-06-13", 
+            "slug": "tutorials"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "conference.section", 
+        "fields": {
+            "conference": 1, 
+            "start_date": "2013-06-14", 
+            "name": "Talks", 
+            "end_date": "2013-06-14", 
+            "slug": "talks"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "conference.section", 
+        "fields": {
+            "conference": 1, 
+            "start_date": "2013-06-15", 
+            "name": "Startup Booths", 
+            "end_date": "2013-06-15", 
+            "slug": "startup-booths"
+        }
+    }
+]

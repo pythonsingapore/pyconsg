@@ -1,0 +1,25 @@
+[
+    {
+        "pk": 1, 
+        "model": "account.account", 
+        "fields": {
+            "timezone": "", 
+            "user": [
+                "admin"
+            ], 
+            "language": "en-us"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "account.emailaddress", 
+        "fields": {
+            "verified": true, 
+            "user": [
+                "admin"
+            ], 
+            "primary": true, 
+            "email": "admin@example.com"
+        }
+    }
+]
