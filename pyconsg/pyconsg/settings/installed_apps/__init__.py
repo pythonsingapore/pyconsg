@@ -17,39 +17,40 @@ EXTERNAL_APPS = [
     'south',
 
     # theme
-    "pinax_theme_bootstrap_account",
-    "pinax_theme_bootstrap",
-    "django_forms_bootstrap",
+    'pinax_theme_bootstrap_account',
+    'pinax_theme_bootstrap',
+    'django_forms_bootstrap',
 
     # external
-    "debug_toolbar",
-    "mailer",
-    "timezones",
-    "metron",
-    "markitup",
-    "taggit",
-    "reversion",
-    "easy_thumbnails",
-    "sitetree",
-    "account",
+    'debug_toolbar',
+    'mailer',
+    'timezones',
+    'metron',
+    'markitup',
+    'taggit',
+    'reversion',
+    'easy_thumbnails',
+    'sitetree',
+    'account',
 
     # symposion
-    "symposion",
-    "symposion.sponsorship",
-    "symposion.conference",
-    "symposion.cms",
-    "symposion.boxes",
-    "symposion.proposals",
-    "symposion.speakers",
-    "symposion.teams",
-    "symposion.reviews",
-    "symposion.schedule",
+    'symposion',
+    'symposion.sponsorship',
+    'symposion.conference',
+    'symposion.cms',
+    'symposion.boxes',
+    'symposion.proposals',
+    'symposion.speakers',
+    'symposion.teams',
+    'symposion.reviews',
+    'symposion.schedule',
 ]
 
 # We are splitting up the INSTALLED_APPS setting because this is helpful when
 # running tests and creating coverage output only for our own internal apps.
 INTERNAL_APPS = [
     'pyconsg',
+    'proposals_pyconsg',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
