@@ -3,11 +3,58 @@
 {% load i18n %}
 {% load boxes_tags %}
 
-{% block head_title %}{% trans "Welcome" %}{% endblock %}
+{% block head_title_base %}{% trans "Welcome" %} | {{ block.super }}{% endblock %}
 
-{% block body_class %}home{% endblock %}
+{% block body_header %}
+<div id="sliderWraper">
+    <div id="featuredSlider" class="flexslider">
+        <ul class="slides">
+            <li>
+            <img src="{{ STATIC_URL }}orcur/images/ny2.jpg" width="1600" height="1200" alt="" />
+                <div class="featured-wraper container container-twelve">
+                    <div class="featured-content seven columns">
+                        <h1 class="featured-title">Join us in June 13-15 </h1>
+                        <div class="featured-entry">
+                            <p>Ut molestie dictum volutpat. Nam volutpat fermentum vestibulum. Vivamus molestie fringilla nibh non fermentum. Pellentesque sodales magna et lectus euismod consequat in sed libero.<a href="#">( Read More &rarr; )</a></p>
+                        </div><!-- .featured-entry-->
+                    </div><!-- .featured-content -->
+                </div><!-- .featured-wraper -->
+            </li>
+        </ul>
+    </div>
+</div><!-- #sliderWraper -->
+
+<div id="twitterWraper">
+    <div class="container container-twelve">
+        <div id="tweet" class="nine columns">
+        </div><!-- .nine -->
+        <div class="three columns topSocial">
+            <ul>
+                {% include "theme_orcur/partials/social_icons.html" %}
+            </ul>
+        </div><!-- three -->
+    </div><!-- .container -->
+</div><!-- #twitterWraper -->
+{% endblock body_header %}
 
 {% block body %}
-    {% box "homepage" %}
-    &nbsp;
-{% endblock %}
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="seven columns alpha">
+            <div class="container-box-inner em-large">
+                <p>1 day of tutorials, 1 day of talks and for the first time a 1 day Hackathon at the Republic Polytec campus, Singapore</p>
+            </div>
+        </div>
+        <div class="five columns omega">
+            <div class="container-box-inner">
+                <div id="countdown" class="counter"></div>
+                <div class="buy-tickets">
+                    <a href="#">Buy Tickets Now</a>
+                </div>
+            </div>
+        </div>
+    </div><!-- .twelve -->
+    <div class="clear"></div>
+    <div class="box-bottom bottom-full"></div>
+</div>
+{% endblock body %}
