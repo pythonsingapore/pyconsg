@@ -8,6 +8,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 EMAIL_DEBUG = DEBUG
 ADMIN_URL = r'^admin/'
+ANALYTICS_TRACKING_ID = ''
 
 
 # =============================================================================
