@@ -13,7 +13,7 @@
             <img src="{{ STATIC_URL }}orcur/images/ny2.jpg" width="1600" height="1200" alt="" />
                 <div class="featured-wraper container container-twelve">
                     <div class="featured-content seven columns">
-                        <h1 class="featured-title">Join us in June 13-15 </h1>
+                        <h1 class="featured-title">{% trans "Join us in June 13-15"%}</h1>
                         <div class="featured-entry">
                             <p>Ut molestie dictum volutpat. Nam volutpat fermentum vestibulum. Vivamus molestie fringilla nibh non fermentum. Pellentesque sodales magna et lectus euismod consequat in sed libero.<a href="#">( Read More &rarr; )</a></p>
                         </div><!-- .featured-entry-->
@@ -40,14 +40,14 @@
 {% block body %}
 <div class="seven columns alpha">
     <div class="container-box-inner em-large">
-        <p>1 day of tutorials, 1 day of talks and for the first time a 1 day Hackathon at the Republic Polytec campus, Singapore</p>
+        <p>{% trans "1 day of tutorials, 1 day of talks and for the first time a 1 day Hackathon at the Republic Polytec campus, Singapore" %}</p>
     </div>
 </div>
 <div class="five columns omega">
     <div class="container-box-inner">
         <div id="countdown" class="counter"></div>
         <div class="buy-tickets">
-            <a href="#">Buy Tickets Now</a>
+            <a href="#">{% trans "Buy Tickets Now</a>
         </div>
     </div>
 </div>
