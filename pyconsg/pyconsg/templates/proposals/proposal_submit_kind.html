@@ -1,0 +1,22 @@
+{% extends "proposals/base.html" %}
+{% load i18n boxes_tags markitup_tags %}
+
+{% block page_title %}{% trans "Submit a Proposal for a" %} {{ kind.name }} | {{ block.super }}{% endblock %}
+
+{% block body %}
+    {% box "example_proposal" %}
+
+    <form method="POST" action="" enctype="multipart/form-data" class="form-horizontal">
+        {% csrf_token %}
+        <fieldset>
+            {{ form.as_p }}
+        </fieldset>
+        <div class="form-actions">
+            <p>
+                {% trans "You will be able to edit your proposal after it has been submitted. The program committee may ask questions, provide feedback, and even suggest changes to your proposal as part of the review processes." %}
+            </p>
+            <input class="btn btn-primary" type="submit" name="finish" value="{% trans "Save" %}" />
+            <input class="btn" type="submit" name="add-speakers" value="{% trans "Save and Add Additional Speakers" %}" />
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "proposals/base.html" %}
+{% load i18n markitup_tags %}
+{% load url from future %}
+
+{% block head_title %}{% trans "Editing" %} {{ proposal.title }} | {{ block.super }}{% endblock %}
+
+{% block body %}
+    <h1>{% trans "Edit" %}: {{ proposal.title }}</h1>
+
+    <p><a href="{% url "proposal_speaker_manage" proposal.pk %}">{% trans "Manage speakers" %}</a></p>
+
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset>
+            {{ form.as_p }}
+        </fieldset>
+        <div class="form-actions">
+            <input class="btn btn-primary" type="submit" value="{% trans "Save" %}" />
+            <a class="btn" href="{% url "proposal_detail" proposal.pk %}">{% trans "Cancel" %}</a>
+        </div>
+    </form>
+{% endblock %}

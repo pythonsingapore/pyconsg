@@ -1,0 +1,16 @@
+{% extends "proposals/base.html" %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Upload Document to" %} '{{ proposal.title }}' | {{ block.super }}{% endblock %}
+
+{% block body %}
+    <form method="POST" action="" enctype="multipart/form-data" class="form-horizontal">
+        {% csrf_token %}
+        <fieldset>
+            {{ form.as_p }}
+        </fieldset>
+        <div class="form-actions">
+            <input class="btn btn-primary" type="submit" value="Upload" />
+        </div>
+    </form>
+{% endblock %}
