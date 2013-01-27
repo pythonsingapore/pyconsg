@@ -107,9 +107,8 @@
     {% block body_base %}
     <div class="container container-twelve">
         {% include "_messages.html" %}
-        {% block body %}
-        {% comment %}
         <div id="counter-container" class="twelve columns container-box">
+            {% block body %}{% comment %}
             <div class="seven columns alpha">
                 <div class="container-box-inner em-large">
                     <p>7 Workshops  more than 40 sessions over 3 days at the Madison Square Garden, NY</p>
@@ -120,9 +119,10 @@
                     <p>Lorem ipsum.</p>
                 </div>
             </div>
+            {% endcomment %}{% endblock body %}
         </div>
-        {% endcomment %}
-        {% endblock body %}
+        <div class="clear"></div>
+        <div class="box-bottom bottom-full"></div>
     </div>
     {% endblock body_base %}
 
