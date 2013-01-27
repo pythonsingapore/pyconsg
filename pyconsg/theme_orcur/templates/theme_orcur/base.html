@@ -47,6 +47,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}orcur/images/apple-touch-icon-72x72.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}orcur/images/apple-touch-icon-114x114.png" />
 
+    <script type="text/javascript" src="{{ STATIC_URL }}orcur/js/jquery-1.8.3.min.js"></script>
     {% block extra_head_base %}{% endblock extra_head_base %}
     {% block analytics %}
     {% if ANALYTICS_TRACKING_ID %}
@@ -161,7 +162,6 @@
 	<!-- JavaScript
 	================================================== -->
     {% block script_base %}
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 	<!-- All Scripts -->
 	<script type="text/javascript" src="{{ STATIC_URL }}orcur/js/scripts.js"></script>

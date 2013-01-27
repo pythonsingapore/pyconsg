@@ -7,7 +7,7 @@
 {% load static %}
 
 {% block extra_head_base %}
-    {% comment %}{% markitup_media "no-jquery" %}{% endcomment %}
+    {% markitup_media "no-jquery" %}
     {% block extra_head %}{% endblock %}
 {% endblock %}
 
@@ -33,5 +33,4 @@
 {% endblock footer %}
 
 {% block extra_script %}
-{% analytics %}
 {% endblock extra_script %}
