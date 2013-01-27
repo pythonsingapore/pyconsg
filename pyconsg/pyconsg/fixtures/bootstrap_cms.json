@@ -5,11 +5,11 @@
         "fields": {
             "body": "Lorem ipsum...", 
             "status": 2, 
-            "updated": "2013-01-19T09:07:53.664Z", 
-            "created": "2013-01-19T09:07:53.655Z", 
+            "updated": "2013-01-19T17:07:53.664", 
+            "created": "2013-01-19T17:07:53.655", 
             "_body_rendered": "<p>Lorem ipsum...</p>", 
             "title": "Tutorials", 
-            "publish_date": "2013-01-19T09:07:53.655Z", 
+            "publish_date": "2013-01-19T17:07:53.655", 
             "path": "tutorials/"
         }
     }, 
@@ -19,11 +19,11 @@
         "fields": {
             "body": "Lorem ipsum...", 
             "status": 2, 
-            "updated": "2013-01-19T09:08:02.590Z", 
-            "created": "2013-01-19T09:08:02.581Z", 
+            "updated": "2013-01-19T17:08:02.590", 
+            "created": "2013-01-19T17:08:02.581", 
             "_body_rendered": "<p>Lorem ipsum...</p>", 
             "title": "Talks", 
-            "publish_date": "2013-01-19T09:08:02.581Z", 
+            "publish_date": "2013-01-19T17:08:02.581", 
             "path": "talks/"
         }
     }, 
@@ -33,11 +33,11 @@
         "fields": {
             "body": "Lorem ipsum...", 
             "status": 2, 
-            "updated": "2013-01-19T09:09:41.742Z", 
-            "created": "2013-01-19T09:09:41.733Z", 
+            "updated": "2013-01-19T17:09:41.742", 
+            "created": "2013-01-19T17:09:41.733", 
             "_body_rendered": "<p>Lorem ipsum...</p>", 
             "title": "Hackathon", 
-            "publish_date": "2013-01-19T09:09:41.733Z", 
+            "publish_date": "2013-01-19T17:09:41.733", 
             "path": "hackathon/"
         }
     }, 
@@ -47,11 +47,11 @@
         "fields": {
             "body": "Lorem ipsum...", 
             "status": 2, 
-            "updated": "2013-01-19T09:09:50.922Z", 
-            "created": "2013-01-19T09:09:50.912Z", 
+            "updated": "2013-01-19T17:09:50.922", 
+            "created": "2013-01-19T17:09:50.912", 
             "_body_rendered": "<p>Lorem ipsum...</p>", 
             "title": "Venue", 
-            "publish_date": "2013-01-19T09:09:50.912Z", 
+            "publish_date": "2013-01-19T17:09:50.912", 
             "path": "venue/"
         }
     }

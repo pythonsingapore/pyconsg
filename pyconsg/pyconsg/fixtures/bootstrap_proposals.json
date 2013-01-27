@@ -3,9 +3,9 @@
         "pk": 1, 
         "model": "proposals.proposalsection", 
         "fields": {
-            "start": "2013-01-19T22:31:51Z", 
+            "start": "2013-01-20T06:31:51", 
             "section": 1, 
-            "end": "2013-04-30T05:00:00Z", 
+            "end": "2013-04-30T13:00:00", 
             "closed": false, 
             "published": true
         }
@@ -14,9 +14,9 @@
         "pk": 2, 
         "model": "proposals.proposalsection", 
         "fields": {
-            "start": "2013-01-19T22:32:15Z", 
+            "start": "2013-01-20T06:32:15", 
             "section": 2, 
-            "end": "2013-04-30T05:00:00Z", 
+            "end": "2013-04-30T13:00:00", 
             "closed": false, 
             "published": true
         }
@@ -25,9 +25,9 @@
         "pk": 3, 
         "model": "proposals.proposalsection", 
         "fields": {
-            "start": "2013-01-19T22:32:36Z", 
+            "start": "2013-01-20T06:32:36", 
             "section": 3, 
-            "end": "2013-06-01T05:00:00Z", 
+            "end": "2013-06-01T13:00:00", 
             "closed": false, 
             "published": true
         }
@@ -56,7 +56,7 @@
         "fields": {
             "section": 3, 
             "name": "Startup Booth", 
-            "slug": "startup-booth"
+            "slug": "startupbooth"
         }
     }
 ]

@@ -1,0 +1,19 @@
+[
+    {
+        "pk": 1, 
+        "model": "speakers.speaker", 
+        "fields": {
+            "invite_token": "", 
+            "name": "John Smith", 
+            "created": "2013-01-27T22:35:05.871", 
+            "photo": "speaker_photos/nopic_1.png", 
+            "user": [
+                "571884718bf9cfdd64f5ef9cc1792"
+            ], 
+            "invite_email": null, 
+            "_biography_rendered": "<p>John is a long term Pythonist.</p>", 
+            "annotation": "", 
+            "biography": "John is a long term Pythonist."
+        }
+    }
+]

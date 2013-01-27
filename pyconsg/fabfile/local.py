@@ -51,11 +51,11 @@ def dumpdata():
 
     """
     local('python2.7 ./manage.py dumpdata --indent 4 --natural auth.user > pyconsg/fixtures/bootstrap_auth.json')  # NOPEP8
-    local('python2.7 ./manage.py dumpdata --indent 4 --natural account > pyconsg/fixtures/bootstrap_account.json')  # NOPEP8
+    # account fixtures get created via signals when auth fixtures are loaded
     local('python2.7 ./manage.py dumpdata --indent 4 --natural sites > pyconsg/fixtures/bootstrap_sites.json')  # NOPEP8
     local('python2.7 ./manage.py dumpdata --indent 4 --natural conference > pyconsg/fixtures/bootstrap_conference.json')  # NOPEP8
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural speakers > pyconsg/fixtures/bootstrap_speakers.json')  # NOPEP8
     local('python2.7 ./manage.py dumpdata --indent 4 --natural proposals > pyconsg/fixtures/bootstrap_proposals.json')  # NOPEP8
-    local('python2.7 ./manage.py dumpdata --indent 4 --natural proposals > pyconsg/fixtures/bootstrap_cms.json')  # NOPEP8
     local('python2.7 ./manage.py dumpdata --indent 4 --natural cms > pyconsg/fixtures/bootstrap_cms.json')  # NOPEP8
     local('python2.7 ./manage.py dumpdata --indent 4 --natural sitetree > pyconsg/fixtures/bootstrap_sitetree.json')  # NOPEP8
 
@@ -63,9 +63,9 @@ def dumpdata():
 def loaddata():
     """Loads available fixtures."""
     local('python2.7 manage.py loaddata bootstrap_auth.json')
-    local('python2.7 manage.py loaddata bootstrap_account.json')
     local('python2.7 manage.py loaddata bootstrap_sites.json')
     local('python2.7 manage.py loaddata bootstrap_conference.json')
+    local('python2.7 manage.py loaddata bootstrap_speakers.json')
     local('python2.7 manage.py loaddata bootstrap_proposals.json')
     local('python2.7 manage.py loaddata bootstrap_cms.json')
     local('python2.7 manage.py loaddata bootstrap_sitetree.json')
