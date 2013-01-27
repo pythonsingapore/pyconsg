@@ -17,11 +17,11 @@
 {% endblock site_brand %}
 
 {% block mobileNav %}
-    {% sitetree_menu from "main" include "trunk" template "sitetree/menu_bootstrap.html" %}
+    {% include "_nav.html" %}
 {% endblock mobileNav %}
 
 {% block nav %}
-    {% sitetree_menu from "main" include "trunk" template "sitetree/menu_bootstrap.html" %}
+    {% include "_nav.html" %}
 {% endblock nav %}
 
 {% block sponsors %}

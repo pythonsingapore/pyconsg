@@ -1,0 +1,11 @@
+{% load sitetree %}
+{% load url from future %}
+<ul>
+{% sitetree_menu from "main" include "trunk" template "sitetree/menu_skeleton.html" %}
+{% if not user.is_authenticated %}
+    <li><a href="{% url "account_signup" %}">Sign Up</a></li>
+    <li><a href="{% url "account_login" %}">Login</a></li>
+{% else %}
+    <li><a href="{% url "account_logout" %}">Logout</a></li>
+{% endif %}
+</ul>
