@@ -33,9 +33,35 @@ vim local_settings.py
 Make your changes. Most values should have good defaults and you should
 basically just change your name and email for the ADMINS setting.
 
+Create the default user for database access.
+
+```sh
+createuser pyconsg -U postgres -dslrP
+```
+
+When prompted for password use `pyconsg`
+
 Initialize your local database with test data:
 
 ```sh
 cd ~/Projects/pyconsg/pyconsg/
 fab rebuild
+```
+
+Running the server locally
+--------------------------
+
+```sh
+./manage.py runserver
+```
+
+Troubleshotting
+---------------
+
+### psycopg2.OperationalError: could not connect to server: Permission denied
+
+Add the following line to your `~/.bash_profile`
+
+```sh
+export PGHOST=localhost
 ```
