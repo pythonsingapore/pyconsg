@@ -1,3 +1,7 @@
+.form-actions {
+    padding-left: 1em !important;
+}
+
 .page-content ul, .ul-disc {
     list-style-type: disc;
     padding-left: 1em;
