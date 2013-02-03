@@ -1,0 +1,15 @@
+{% extends "site_base_one_column.html" %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Upload File" %} | {{ block.super }}{% endblock %}
+
+{% block body %}
+<h1>{% trans "Upload File" %}</h1>
+<form method="POST" action="{% url file_create %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+        <button class="btn btn-primary" type="submit">{% trans "Upload" %}</button>
+    </div>
+</form>
+{% endblock %}

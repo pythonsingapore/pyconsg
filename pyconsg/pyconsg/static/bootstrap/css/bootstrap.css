@@ -591,3 +591,31 @@
 .icon-fullscreen {
   background-position: -456px -144px;
 }
+
+// Quick floats
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+// Toggling content
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+// Visibility
+.invisible {
+  visibility: hidden;
+}
+
+// For Affix plugin
+.affix {
+  position: fixed;
+}
