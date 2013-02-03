@@ -14,7 +14,11 @@ DJANGO_APPS = [
 ]
 
 EXTERNAL_APPS = [
+    # globally needed
     'south',
+    'admin_honeypot',
+    'debug_toolbar',
+    'mailer',
 
     # theme
     # 'pinax_theme_bootstrap_account',
@@ -22,16 +26,17 @@ EXTERNAL_APPS = [
     'django_forms_bootstrap',
     'theme_orcur',
 
-    # external
-    'admin_honeypot',
-    'debug_toolbar',
-    'mailer',
+    # django-filer related
+    'filer',
+    'mptt',
+    'easy_thumbnails',
+
+    # external symposion related
     'timezones',
     'metron',
     'markitup',
     'taggit',
     'reversion',
-    'easy_thumbnails',
     'sitetree',
     'account',
 
