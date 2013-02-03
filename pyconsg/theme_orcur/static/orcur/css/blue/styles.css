@@ -1,4 +1,4 @@
-.page-content ul {
+.page-content ul, .ul-disc {
     list-style-type: disc;
     padding-left: 1em;
 }
