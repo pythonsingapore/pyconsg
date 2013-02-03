@@ -5,21 +5,17 @@
 {% block page_title %}{% trans "Create Speaker Profile" %} | {{ block.super }}{% endblock %}
 
 {% block body %}
-<div class="twelve columns alpha">
-    <div class="container-box-inner em-large">
-        {% box "speaker-profile" %}
+{% box "speaker-profile" %}
 
-        <h1>{% trans "Create Speaker Profile" %}</h1>
-        <form method="POST" action="" enctype="multipart/form-data">
-            {% csrf_token %}
-            <fieldset>
-                {{ form.as_p }}
-            </fieldset>
-            <div class="form-actions">
-                <input class="btn btn-primary" type="submit" value="Save" />
-                <a class="btn" href="{% url "dashboard" %}">Cancel</a>
-            </div>
-        </form>
+<h1>{% trans "Create Speaker Profile" %}</h1>
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset>
+        {{ form.as_p }}
+    </fieldset>
+    <div class="form-actions">
+        <input class="btn btn-primary" type="submit" value="Save" />
+        <a class="btn" href="{% url "dashboard" %}">Cancel</a>
     </div>
-</div>
+</form>
 {% endblock %}
