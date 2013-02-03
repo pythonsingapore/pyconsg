@@ -32,7 +32,7 @@
         {% if not user.speaker_profile %}
             <p>To submit a proposal, you must first <a href="{% url speaker_create %}">create a speaker profile</a>.</p>
         {% else %}
-            <h4>Your Proposals</h4>
+            <h4 class="push-top">Your Proposals</h4>
             {% if user.speaker_profile.proposals.exists %}
                 <table class="table">
                     <tr>
