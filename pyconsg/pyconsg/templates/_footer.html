@@ -1,39 +1,28 @@
-{% load i18n %}
+{% load i18n boxes_tags %}
 <div class="three columns">
     <div class="widget-container">
-        <h3><span>About orcur</span></h3>
-            <p>Orcur is a theme design for event planning and management.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi imperdiet tortor id</p>
+        <h3><span>About</span></h3>
+            {% box "footer_about" %}
     </div><!-- .widget-container -->
 </div><!-- .three -->
 <div class="three columns">
     <div class="widget-container">
         <h3><span>Latest News</span></h3>
-        <p>
-            <a href="#">Sao Paublo recalls at the end of August</a>
-            <br />
-            <span class="small">by <a href="#">Joe Dows</a> on <strong>July 26</strong></span>
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi imperdiet tortor id ligula vulputate. <a href="#">( Read More &rarr; )</a></p>
+        <p>Coming soon...</p>
     </div><!-- .widget-container -->
 </div><!-- .three -->
 <div class="three columns">
     <div class="widget-container">
         <h3><span>When and Where?</span></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi imperdiet</p>
-        <p>Premium Club - 10:00a<br />
-        Elites Membership - 10:30a<br />
-        AM Package - 11:30</p>
+        {% box "footer_when_where" %}
     </div><!-- .widget-container -->
 </div><!-- .three -->
 <div class="three columns">
     <div class="widget-container">
-        <h3><span>Newsletter</span></h3>
-        <p>Fusce cursus aliquam aliquet. Sed pretium auctor nunc elandit estibulum</p>
-        <div class="newsletter-box">
-            <input type="text" name="email" id="email" placeholder="Your Email" />
-            <input type="button" name="submit" id="submit" value="Submit" />
-        </div>
+        <h3><span>Get social</span></h3>
+        <ul>
+            {% include "theme_orcur/partials/social_icons.html" %}
+        </ul>
     </div><!-- .widget-container -->
 </div><!-- .three -->
 
