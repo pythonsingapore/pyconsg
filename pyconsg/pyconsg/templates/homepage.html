@@ -15,7 +15,7 @@
                         <div class="featured-entry">
                             <p>
                                 {% blocktrans %}
-                                Since this years PyCon APAC will be held in Tokyo, the Python User Group Singapore decided to hold a PyCon SG for the first time this year. Same venue, same organizers, same awesome.
+                                Since this years PyCon APAC will be held in Tokyo, the Python User Group Singapore decided to hold a PyCon Singapore for the first time this year. Same venue, same organizers, same awesome.
                                 {% endblocktrans %}
                             </p>
                         </div><!-- .featured-entry-->
@@ -39,18 +39,39 @@
 </div><!-- #twitterWraper -->
 {% endblock body_header %}
 
-{% block body %}
-<div class="seven columns alpha">
-    <div class="container-box-inner em-large">
-        <p>{% trans "1 day of tutorials, 1 day of talks and for the first time a 1 day Hackathon at the Republic Polytec campus, Singapore" %}</p>
-    </div>
-</div>
-<div class="five columns omega">
-    <div class="container-box-inner">
-        <div id="countdown" class="counter"></div>
-        <div class="buy-tickets">
-            <a href="#">{% trans "Buy Tickets Now" %}</a>
+{% block body_base %}
+<div class="container container-twelve">
+    {% include "_messages.html" %}
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="seven columns alpha">
+            <div class="container-box-inner em-large">
+                <p>{% trans "1 day of tutorials, 1 day of talks and for the first time a 1 day Hackathon at the Republic Polytec campus, Singapore" %}</p>
+            </div>
+        </div>
+        <div class="five columns omega">
+            <div class="container-box-inner">
+                <div id="countdown" class="counter"></div>
+                <div class="buy-tickets">
+                    <a href="#">{% trans "Buy Tickets Now" %}</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-{% endblock body %}
+
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="five columns alpha">
+            <div class="container-box-inner em-large">
+                <img src="{{ STATIC_URL }}images/proposals.jpg" />
+            </div>
+        </div>
+
+        <div class="seven columns alpha">
+            <div class="container-box-inner em-large">
+                <p>{% trans 'We are inviting for proposals for talks and tutorials now. Please see our <a href="/proposals/">Proposals section</a> for more information.' %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body_base %}
