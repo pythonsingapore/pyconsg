@@ -11,13 +11,9 @@
             <img src="{{ STATIC_URL }}images/singapore.jpg" width="1600" height="1200" alt="" />
                 <div class="featured-wraper container container-twelve">
                     <div class="featured-content seven columns">
-                        <h1 class="featured-title">{% trans "Join us in June 13-15"%}</h1>
+                        <h1 class="featured-title">{% box "join_us" %}</h1>
                         <div class="featured-entry">
-                            <p>
-                                {% blocktrans %}
-                                Since this year's PyCon APAC will be held in Tokyo, the Python User Group Singapore decided to hold a PyCon Singapore for the first time this year. Same venue, same organizers, same awesome.
-                                {% endblocktrans %}
-                            </p>
+                            {% box "intro" %}
                         </div><!-- .featured-entry-->
                     </div><!-- .featured-content -->
                 </div><!-- .featured-wraper -->
@@ -45,7 +41,7 @@
     <div id="counter-container" class="twelve columns container-box">
         <div class="seven columns alpha">
             <div class="container-box-inner em-large">
-                <p>{% trans "1 day of tutorials, 1 day of talks and for the first time a 1 day Hackathon at the Republic Polytec campus, Singapore" %}</p>
+                {% box "timer" %}
             </div>
         </div>
         <div class="five columns omega">
@@ -69,8 +65,7 @@
 
         <div class="seven columns alpha">
             <div class="container-box-inner em-large">
-                <p>{% trans 'We are inviting for proposals for talks and tutorials now. Please see our <a href="/proposals/">Proposals section</a> for more information.' %}</p>
-                <p>{% trans 'Registration will be opened soon!' %}</p>
+                {% box "proposals" %}
             </div>
         </div>
     </div>

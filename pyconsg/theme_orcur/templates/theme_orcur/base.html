@@ -26,13 +26,16 @@
 	<!-- CSS
   ================================================== -->
     {% block style_base %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" />
+
     <link rel="stylesheet" href="{{ STATIC_URL }}orcur/css/blue/base.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}orcur/css/blue/flexslider.css" />
+
     <link rel="stylesheet" href="{{ STATIC_URL }}orcur/css/blue/layout.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}orcur/css/blue/styles.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}orcur/css/skeleton.min.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}orcur/css/jquery.countdown.css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" />
     {% endblock style_base %}
 
     {% block noscript_base %}

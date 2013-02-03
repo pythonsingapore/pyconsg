@@ -7,6 +7,10 @@
     padding-left: 1em;
 }
 
+.page-content p {
+    font-size: 12px;
+}
+
 .push-top {
     margin-top: 1em;
 }
