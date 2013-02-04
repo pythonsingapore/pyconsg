@@ -133,6 +133,10 @@
 							height: 40px;
 							padding: 0 10px;
 						}
+
+						nav ul li ul li a:hover {
+							text-decoration: none;
+						}
 						
 							/* 3rd level Dropdown */
 							
