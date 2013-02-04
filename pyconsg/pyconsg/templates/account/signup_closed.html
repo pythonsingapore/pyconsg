@@ -1,0 +1,14 @@
+{% extends "site_base_one_column.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block head_title %}{% trans "Sign up closed" %} | {{ block.super }}{% endblock %}
+
+{% block body %}
+<h1>{% trans "Sign up closed" %}</h1>
+{% if code %}
+    <p>{% blocktrans %}The code you provided was not accepted.{% endblocktrans %}</p>
+{% else %}
+    <p>{% blocktrans %}Sign up is closed to the general public.{% endblocktrans %}</p>
+{% endif %}
+{% endblock %}

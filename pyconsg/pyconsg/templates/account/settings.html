@@ -1,0 +1,16 @@
+{% extends "site_base_one_column.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block head_title %}{% trans "Account" %} | {{ block.super }}{% endblock %}
+
+{% block body %}
+<h1>{% trans "Account" %}</legend>
+<form method="POST" action="{% url "account_settings" %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+        <button class="btn btn-primary" type="submit">{% trans "Save" %}</button>
+    </div>
+</form>
+{% endblock %}

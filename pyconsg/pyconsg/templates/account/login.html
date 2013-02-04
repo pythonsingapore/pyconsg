@@ -1,20 +1,29 @@
-{% extends "site_base_one_column.html" %}
+{% extends "site_base.html" %}
 {% load i18n %}
 {% load url from future %}
 
-{% block head_title %}{% trans "Login" %} | {{ block.super }}{% endblock %}
+{% block head_title %}{% trans "Log in" %} | {{ block.super }}{% endblock %}
 
 {% block body %}
-<h1>{% trans "Log in to an existing account" %}</h1>
-<form method="POST" action="{% url "account_login" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
-    {% csrf_token %}
-    {{ form.as_p }}
-    {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <div class="form-actions">
-        <button type="submit" class="btn">{% trans "Log in" %}</button>
+<div class="eight columns alpha">
+    <div class="container-box-inner">
+        <h1>{% trans "Log in to an existing account" %}</h1>
+        <form method="POST" action="{% url "account_login" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <div class="form-actions">
+                <a href="{% url "account_password_reset" %}" class="btn">{% trans "Forgot your password?" %}</a>
+                <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
+            </div>
+        </form>
     </div>
-</form>
-<p><a href="{% url "account_password_reset" %}">{% trans "Forgot your password?" %}</a></p>
+</div>
+<div class="four columns omega">
+    <div class="container-box-inner">
+        {% include "account/_login_sidebar.html" %}
+    </div>
+</div>
 {% endblock %}

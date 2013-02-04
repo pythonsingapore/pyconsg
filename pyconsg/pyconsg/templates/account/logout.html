@@ -1,12 +1,18 @@
-{% extends "site_base.html" %}
+{% extends "site_base_one_column.html" %}
+{% load i18n %}
+{% load url from future %}
 
-{% block head_title_base %}Logout | {{ block.super }}{% endblock %}
+{% block head_title %}{% trans "Log out" %} | {{ block.super }}{% endblock %}
 
 {% block body %}
-<div class="seven columns alpha">
-    <div class="container-box-inner em-large">
-        <h1>Logged out</h1>
-        <p>Good bye! Hope to see you again, soon!</p>
-    </div>
-</div>
-{% endblock body %}
+<form method="POST" action="{% url "account_logout" %}" class="form-horizontal">
+    <legend>{% trans "Log out" %}</legend>
+    <fieldset>
+        {% csrf_token %}
+        <p>{% trans "Are you sure you want to log out?" %}</p>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">{% trans "Log out" %}</button>
+        </div>
+    </fieldset>
+</form>
+{% endblock %}
