@@ -1,0 +1,28 @@
+{% extends "site_base_one_column.html" %}
+{% load i18n boxes_tags %}
+{% load url from future %}
+
+{% block head_title %}{% trans "Apply to be a Sponsor" %} | {{ block.super }}{% endblock %}
+
+{% block body_class %}sponsorships{% endblock %}
+
+{% block body %}
+{% box "sponsorship-apply" %}
+<form method="POST" action="" class="form-horizontal">
+    {% csrf_token %}
+    <h2>{% trans "Apply to Be a Sponsor" %}</h2>
+    {{ form.as_p }}
+    <div class="form-actions">
+        <button class="btn btn-primary" type="submit">{% trans "Apply" %}</button>
+        <a class="btn" href="{% url "dashboard" %}">{% trans "Cancel" %}</a>
+        <p class="help-block">
+            <small>
+                {% url "cms_page" "sponsor/terms/" as terms_url %}
+                {% blocktrans with terms_url=terms_url %}
+                By submitting this sponsor application you are agreeing to the <a href="{{ terms_url }}" target="_blank">terms and conditions</a>.
+                {% endblocktrans %}
+            </small>
+        </p>
+    </div>
+</form>
+{% endblock %}
