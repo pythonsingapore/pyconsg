@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import ugettext_lazy as _
 
 from markitup.widgets import MarkItUpWidget
 
@@ -10,6 +11,11 @@ from proposals_pyconsg.models import (
 
 
 class ProposalForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(ProposalForm, self).__init__(*args, **kwargs)
+        self.fields['additional_notes'].label = _(
+            'Notes to reviewers')
 
     def clean_description(self):
         value = self.cleaned_data["description"]
