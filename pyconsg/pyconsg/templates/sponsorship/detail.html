@@ -1,5 +1,5 @@
 {% extends "site_base_one_column.html" %}
-{% load i18n %}
+{% load i18n bootstrap_tags %}
 
 {% block head_title %}{{ sponsor }} | {{ block.super }}{% endblock %}
 
@@ -11,7 +11,7 @@
 <form enctype="multipart/form-data" method="POST" action="" class="form-horizontal">
     {% csrf_token %}
     <fieldset>
-        {{ form.as_p }}
+        {{ form|as_bootstrap }}
     </fieldset>
 
     <h3>{{ sponsor.level }} {% trans "Sponsor Benefits" %}</h3>

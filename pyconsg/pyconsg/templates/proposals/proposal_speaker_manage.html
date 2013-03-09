@@ -1,5 +1,5 @@
 {% extends "proposals/base.html" %}
-{% load i18n %}
+{% load i18n bootstrap_tags %}
 {% load url from future %}
 
 {% block head_title %}{% trans "Manage speaker" %} | {{ block.super }}{% endblock %}
@@ -26,7 +26,7 @@
 
     <form method="POST" action="" enctype="multipart/form-data" class="uniForm">
         {% csrf_token %}
-        {{ add_speaker_form.as_p }}
+        {{ add_speaker_form|as_bootstrap }}
         <div class="form-action">
             <input type="submit" value="{% trans "Add speaker" %}" class="btn btn-primary" />
         </div>

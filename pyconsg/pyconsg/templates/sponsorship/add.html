@@ -1,5 +1,5 @@
 {% extends "site_base_one_column.html" %}
-{% load i18n boxes_tags %}
+{% load i18n boxes_tags bootstrap_tags %}
 
 {% block head_title %}{% trans "Add a Sponsor" %} | {{ block.super }}{% endblock %}
 
@@ -9,7 +9,7 @@
 <form method="POST" action="{% url sponsor_add %}" class="form-horizontal">
     {% csrf_token %}
     <legend>{% trans "Add a Sponsor" %}</legend>
-    {{ form.as_p }}
+    {{ form|as_bootstrap }}
     <div class="form-actions">
         <button class="btn btn-primary" type="submit">{% trans "Add" %}</button>
         <a class="btn" href="{% url dashboard %}">{% trans "Cancel" %}</a>

@@ -1,5 +1,5 @@
 {% extends "proposals/base.html" %}
-{% load i18n %}
+{% load i18n bootstrap_tags %}
 
 {% block page_title %}{% trans "Upload Document to" %} '{{ proposal.title }}' | {{ block.super }}{% endblock %}
 
@@ -7,7 +7,7 @@
     <form method="POST" action="" enctype="multipart/form-data" class="form-horizontal">
         {% csrf_token %}
         <fieldset>
-            {{ form.as_p }}
+            {{ form|as_bootstrap }}
         </fieldset>
         <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="Upload" />

@@ -1,5 +1,5 @@
 {% extends "site_base_one_column.html" %}
-{% load i18n %}
+{% load i18n bootstrap_tags %}
 {% load url from future %}
 
 {% block head_title %}{% trans "Account" %} | {{ block.super }}{% endblock %}
@@ -8,7 +8,7 @@
 <h1>{% trans "Account" %}</legend>
 <form method="POST" action="{% url "account_settings" %}">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form|as_bootstrap }}
     <div class="form-actions">
         <button class="btn btn-primary" type="submit">{% trans "Save" %}</button>
     </div>

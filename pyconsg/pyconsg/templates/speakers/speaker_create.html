@@ -1,5 +1,5 @@
 {% extends "speakers/base.html" %}
-{% load i18n boxes_tags %}
+{% load i18n boxes_tags bootstrap_tags %}
 {% load url from future %}
 
 {% block page_title %}{% trans "Create Speaker Profile" %} | {{ block.super }}{% endblock %}
@@ -11,7 +11,7 @@
 <form method="POST" action="" enctype="multipart/form-data">
     {% csrf_token %}
     <fieldset>
-        {{ form.as_p }}
+        {{ form|as_bootstrap }}
     </fieldset>
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="Save" />

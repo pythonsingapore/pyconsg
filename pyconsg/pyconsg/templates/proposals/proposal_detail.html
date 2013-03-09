@@ -1,5 +1,5 @@
 {% extends "proposals/base.html" %}
-{% load i18n account_tags %}
+{% load i18n account_tags bootstrap_tags %}
 {% load url from future %}
 
 {% block head_title %}{{ proposal.title }} | {{ block.super }}{% endblock %}
@@ -85,7 +85,7 @@
             <form action="" method="POST" accept-charset="utf-8">
                 {% csrf_token %}
                 <fieldset>
-                    {{ message_form.as_p }}
+                    {{ message_form|as_bootstrap }}
                 </fieldset>
                 <div class="actions">
                     <button type="submit" name="message_submit" class="btn
