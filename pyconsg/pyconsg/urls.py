@@ -38,6 +38,9 @@ urlpatterns += patterns(
     url(r'^proposals/$',
         direct_to_template, {'template': 'proposals.html', },
         name='proposals'),
+    url(r'^sponsorship/$',
+        direct_to_template, {'template': 'sponsorship.html', },
+        name='sponsorship'),
 
     url(settings.ADMIN_URL, include(admin.site.urls)),
     url(r'^admin-.+/', include('admin_honeypot.urls')),

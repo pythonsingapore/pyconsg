@@ -1,0 +1,48 @@
+{% extends "site_base.html" %}
+{% load i18n boxes_tags sponsorship_tags %}
+{% load url from future %}
+
+{% block head_title_base %}{% trans "Sponsorship" %} | {{ block.super }}{% endblock %}
+
+{% block body_base %}
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="twelve columns alpha">
+            <div class="container-box-inner">
+                {% box "sponsorship" %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="twelve columns alpha">
+            <div class="container-box-inner">
+                {% box "sponsorship2" %}
+                {% sponsor_levels as levels %}
+                {% for level in levels %}
+                    <h2>{{ level.name }} - S${{ level.cost }}</h2>
+                    <ul>
+                    {% for benefit in level.benefit_levels.all %}
+                        <li>{{ benefit.benefit.name }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="box-bottom bottom-full"></div>
+</div>
+
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="twelve columns alpha">
+            <div class="container-box-inner">
+                {% box "sponsorship3" %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body_base %}
