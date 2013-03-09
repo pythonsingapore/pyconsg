@@ -10,6 +10,13 @@ a {
     padding-left: 1em !important;
 }
 
+.messages {
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: -30px;
+}
+
 .page-content ul, .ul-disc {
     list-style-type: disc;
     padding-left: 1em;

@@ -427,10 +427,11 @@ a.button.orange,button.orange,input[type="submit"].orange,input[type="reset"].or
 	.dotDivider { clear:both; display:block; overflow:hidden; height:4px; margin: 0px auto 30px; background: url('../../images/border-horizontal-dots.gif') repeat-x; border-top: 30px solid transparent; }
 	.lineDivider { clear:both; display:block; overflow:hidden; height:4px; margin: 0px auto 30px; background: url('../../images/line-shadowed.gif') repeat-x; border-top: 30px solid transparent; }
 	
-	/* Alerts */
+	/* Alerts
 	.alert{ border-radius:5px 5px 5px 5px; height:100%; line-height:1.5; margin:10px auto; padding:15px 15px 15px 35px}
 	.message{ background:url("images/icon-message.png") no-repeat scroll 10px 15px #FFF; border:1px solid #DDD}
 	.note{ background:url("images/icon-note.png") no-repeat scroll 10px 15px #FDEBAE; border:1px solid #E5C455; color:#A5660B}
 	.info{ background:url("images/icon-info.png") no-repeat scroll 10px 15px #BFE4F9; border:1px solid #68A2CF; color:#2E6093}
 	.success{ background:url("images/icon-success.png") no-repeat scroll 10px 15px #DEE3AB; border:1px solid #A3C159; color:#5D6F33}
 	.warning{ background:url("images/icon-x.png") no-repeat scroll 10px 15px #FCC; border:1px solid #F99; color:#C31A24}
+    */

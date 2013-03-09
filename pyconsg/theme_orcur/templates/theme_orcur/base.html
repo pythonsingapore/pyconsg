@@ -110,9 +110,10 @@
     {% endcomment %}
     {% endblock %}
 
+    {% include "_messages.html" %}
+
     {% block body_base %}
     <div class="container container-twelve">
-        {% include "_messages.html" %}
         <div id="counter-container" class="twelve columns container-box">
             {% block body %}{% comment %}
             <div class="seven columns alpha">
