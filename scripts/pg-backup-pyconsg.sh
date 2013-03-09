@@ -14,7 +14,7 @@ do
 done
 
 DATE=`date +%Y%m%d%H%M%S`
-rm -f $HOME/$BACKUPFOLDER/.pgdump-${DATE}.gz_INPROGRESS
+rm -f $HOME/$BACKUPFOLDER/.pgdump-${DATE}_INPROGRESS
 pg_dump -c -Fc -O -U $DBUSER -f $HOME/$BACKUPFOLDER/.pgdump-${DATE}_INPROGRESS
-mv -f $HOME/$BACKUPFOLDER/.pgdump_INPROGRESS $HOME/$BACKUPFOLDER/pgdump-${DATE}
+mv -f $HOME/$BACKUPFOLDER/.pgdump${DATE}_INPROGRESS $HOME/$BACKUPFOLDER/pgdump-${DATE}
 exit 0
