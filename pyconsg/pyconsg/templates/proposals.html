@@ -1,0 +1,46 @@
+{% extends "site_base.html" %}
+{% load i18n boxes_tags %}
+{% load url from future %}
+
+{% block head_title_base %}{% trans "Proposals" %} | {{ block.super }}{% endblock %}
+
+{% block body_base %}
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="twelve columns alpha">
+            <div class="container-box-inner">
+                {% box "proposals" %}
+                <a href="{% url "account_signup" %}" class="btn btn-primary btn-large">{% trans "Sign up now" %}</a>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="box-bottom bottom-full"></div>
+</div>
+
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="twelve columns alpha">
+            <div class="container-box-inner">
+                {% box "proposals2" %}
+                <a href="{% url "account_signup" %}" class="btn btn-primary btn-large">{% trans "Sign up now" %}</a>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="box-bottom bottom-full"></div>
+</div>
+
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="twelve columns alpha">
+            <div class="container-box-inner">
+                {% box "proposals3" %}
+                <a href="{% url "account_signup" %}" class="btn btn-primary btn-large">{% trans "Sign up now" %}</a>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="box-bottom bottom-full"></div>
+</div>
+{% endblock body_base %}
