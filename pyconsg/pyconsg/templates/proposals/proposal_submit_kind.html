@@ -16,7 +16,7 @@
                 {% trans "You will be able to edit your proposal after it has been submitted. The program committee may ask questions, provide feedback, and even suggest changes to your proposal as part of the review processes." %}
             </p>
             <input class="btn btn-primary" type="submit" name="finish" value="{% trans "Save" %}" />
-            <input class="btn" type="submit" name="add-speakers" value="{% trans "Save and Add Additional Speakers" %}" />
+            {% comment %}<input class="btn" type="submit" name="add-speakers" value="{% trans "Save and Add Additional Speakers" %}" />{% endcomment %}
         </div>
     </form>
 {% endblock %}
