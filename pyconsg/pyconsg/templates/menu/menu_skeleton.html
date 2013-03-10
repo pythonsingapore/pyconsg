@@ -1,12 +1,12 @@
-{% load sitetree %}
-{% for item in sitetree_items %}
-    <li class="{% if item.is_current or item.in_current_branch %}active{% endif %}">
-        <a href="{% if item.has_children %}#{% else %}{% sitetree_url for item %}{% endif %}">
-            {{ item.title_resolved }}
+{% load menu_tags %}
+{% for child in children %}
+    <li class="{% if child.selected or child.descendant %}active{% endif %}">
+        <a href="{% if child.children %}#{% else %}{{ child.attr.redirect_url|default:child.get_absolute_url }}{% endif %}">
+            {{ child.get_menu_title }}
         </a>
-        {% if item.has_children %}
+        {% if child.children %}
             <ul>
-			    {% sitetree_children of item for menu template "sitetree/menu.html" %}
+                {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
             </ul>
 		{% endif %}
     </li>

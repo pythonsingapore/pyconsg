@@ -66,7 +66,7 @@ urlpatterns += patterns(
     url(r'^schedule/', include('symposion.schedule.urls')),
     url(r'^markitup/', include('markitup.urls')),
 
-    url(r'^', include('symposion.cms.urls')),
+    url(r'^', include('cms.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

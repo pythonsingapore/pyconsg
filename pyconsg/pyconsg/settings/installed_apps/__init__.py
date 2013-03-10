@@ -28,7 +28,6 @@ EXTERNAL_APPS = [
 
     # django-filer related
     'filer',
-    'mptt',
     'easy_thumbnails',
 
     # external symposion related
@@ -36,21 +35,30 @@ EXTERNAL_APPS = [
     'metron',
     'markitup',
     'taggit',
-    'reversion',
-    'sitetree',
     'account',
 
     # symposion
     'symposion',
     'symposion.sponsorship',
     'symposion.conference',
-    'symposion.cms',
     'symposion.boxes',
     'symposion.proposals',
     'symposion.speakers',
     'symposion.teams',
     'symposion.reviews',
     'symposion.schedule',
+
+    # django-cms
+    'cms',
+    'menus',
+    'mptt',
+    'sekizai',
+    'cmsplugin_blog',
+    'djangocms_utils',
+    'simple_translation',
+    'tagging',
+    'missing',
+    'cmsplugin_markdown',
 ]
 
 # We are splitting up the INSTALLED_APPS setting because this is helpful when
@@ -62,8 +70,9 @@ INTERNAL_APPS = [
 
 INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
 
-from pyconsg.settings.installed_apps.mailer import *  # NOQA
-from pyconsg.settings.installed_apps.debug_toolbar import *  # NOQA
-from pyconsg.settings.installed_apps.account import *  # NOQA
-from pyconsg.settings.installed_apps.markitup import *  # NOQA
-from pyconsg.settings.installed_apps.symposion import *  # NOQA
+from .account import *  # NOQA
+from .cms import *  # NOQA
+from .debug_toolbar import *  # NOQA
+from .mailer import *  # NOQA
+from .markitup import *  # NOQA
+from .symposion import *  # NOQA

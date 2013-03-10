@@ -27,6 +27,8 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     'django.core.context_processors.tz',
     'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
+    'cms.context_processors.media',
+    'sekizai.context_processors.sekizai',
     'pinax_utils.context_processors.settings',
     'account.context_processors.account',
     'symposion.reviews.context_processors.reviews',
