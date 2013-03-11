@@ -1,0 +1,30 @@
+{% load i18n placeholder_tags cmsplugin_blog_tags simple_translation_tags %}
+
+{% for entry in object_list|annotate_with_translations %}
+    {% with entry|get_preferred_translation_from_request:request as title %}
+    {% with entry.placeholders|choose_placeholder:"excerpt" as excerpt %}
+        <article id="blogPost">
+            <div class="post-meta">
+                <div><a href="{{ title.get_absolute_url }}" class="post-format standard"></a></div>
+                <div class="post-meta-data">
+                    <h6>{% trans "Posted" %}:</h6>
+                    <span>{{ entry.pub_date|date:"N d, Y" }}</span>
+                </div>
+            </div><!-- .post-date-comments -->
+            <div class="post-entry">
+                <h1><a href="{{ title.get_absolute_url }}">{{ title }}</a></h1>
+                {% comment %}
+                <div class="post-thumbnail">
+                    <img src="images/placeholders/city.jpg" alt="City Lights" width="100%" height="180">
+                </div><!-- .post-thumbnail -->
+                {% endcomment %}
+                <p>
+                    {% render_placeholder excerpt %}
+                    <a href="{{ title.get_absolute_url }}">( {% trans "Read More" %} → )</a>
+                </p>
+            </div><!-- .post-entry -->
+            <div class="lineDivider"></div>
+        </article>
+    {% endwith %}
+    {% endwith %}
+{% endfor %}

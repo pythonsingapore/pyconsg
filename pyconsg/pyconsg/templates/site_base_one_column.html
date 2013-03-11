@@ -1,15 +1,17 @@
 {% extends "site_base.html" %}
 
 {% block body_base %}
-<div class="container container-twelve">
-    <div id="counter-container" class="twelve columns container-box">
-        <div class="twelve columns alpha">
+<div id="page" class="container container-twelve clearfix">
+    <div role="main" class="twelve columns">
+        <div class="container-box">
             <div class="container-box-inner">
-                {% block body %}{% endblock body %}
+                <div class="twelve columns alpha">
+                    <div class="container-box-inner">
+                        {% block body %}{% endblock body %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="clear"></div>
-    <div class="box-bottom bottom-full"></div>
 </div>
 {% endblock body_base %}

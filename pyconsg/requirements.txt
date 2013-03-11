@@ -18,7 +18,7 @@ South==0.7.6
 # django-cms related packages
 # =============================================================================
 django-cms==2.3.5
-cmsplugin-blog==1.1.2
+-e git+git://github.com/fivethreeo/cmsplugin-blog.git@cd91a4eb066437aa254574759eed51da973314ab#egg=cmsplugin_blog
 cmsplugin-markdown==0.1
 
 

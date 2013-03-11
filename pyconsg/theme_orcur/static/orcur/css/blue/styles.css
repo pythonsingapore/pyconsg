@@ -26,6 +26,11 @@ a {
     font-size: 12px;
 }
 
+.post-meta-data {
+    text-align: right;
+    float: right;
+}
+
 .push-top {
     margin-top: 1em;
 }
