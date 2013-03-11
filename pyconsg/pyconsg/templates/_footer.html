@@ -1,4 +1,4 @@
-{% load i18n boxes_tags %}
+{% load i18n boxes_tags pyconsg_tags simple_translation_tags %}
 <div class="three columns">
     <div class="widget-container">
         <h3><span>About</span></h3>
@@ -8,7 +8,16 @@
 <div class="three columns">
     <div class="widget-container">
         <h3><span>Latest News</span></h3>
-        <p>Coming soon...</p>
+        <ul>
+            {% get_latest_blog_entries as entries %}
+            {% for entry in entries %}
+                {% with entry|get_preferred_translation_from_request:request as title %}
+                    <li><a href="{{ title.get_absolute_url }}">{{ title }}</a></li>
+                {% endwith %}
+            {% empty %}
+                <li>{% trans "Coming soon..." %}</li>
+            {% endfor %}
+        </ul>
     </div><!-- .widget-container -->
 </div><!-- .three -->
 <div class="three columns">
