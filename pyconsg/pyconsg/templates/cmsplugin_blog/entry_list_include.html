@@ -20,7 +20,8 @@
                 {% endcomment %}
                 <p>
                     {% render_placeholder excerpt %}
-                    <a href="{{ title.get_absolute_url }}">( {% trans "Read More" %} → )</a>
+                    {% render_placeholder content %}
+                    <a href="{{ title.get_absolute_url }}">( {% trans "Permalink" %} → )</a>
                 </p>
             </div><!-- .post-entry -->
             <div class="lineDivider"></div>
