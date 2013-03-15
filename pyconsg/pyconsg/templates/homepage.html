@@ -36,23 +36,7 @@
 {% endblock body_header %}
 
 {% block body_base %}
-<div class="container container-twelve">
-    <div id="counter-container" class="twelve columns container-box">
-        <div class="seven columns alpha">
-            <div class="container-box-inner em-large">
-                {% box "timer" %}
-            </div>
-        </div>
-        <div class="five columns omega">
-            <div class="container-box-inner">
-                <div id="countdown" class="counter"></div>
-                <div class="buy-tickets">
-                    <a href="#">{% trans "Buy Tickets Now" %}</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{% include "partials/countdown.html" %}
 
 <div class="container container-twelve">
     <div id="counter-container" class="twelve columns container-box">
