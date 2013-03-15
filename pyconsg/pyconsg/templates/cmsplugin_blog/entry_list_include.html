@@ -3,6 +3,7 @@
 {% for entry in object_list|annotate_with_translations %}
     {% with entry|get_preferred_translation_from_request:request as title %}
     {% with entry.placeholders|choose_placeholder:"excerpt" as excerpt %}
+    {% with entry.placeholders|choose_placeholder:"content" as content %}
         <article id="blogPost">
             <div class="post-meta">
                 <div><a href="{{ title.get_absolute_url }}" class="post-format standard"></a></div>
@@ -19,13 +20,13 @@
                 </div><!-- .post-thumbnail -->
                 {% endcomment %}
                 <p>
-                    {% render_placeholder excerpt %}
                     {% render_placeholder content %}
                     <a href="{{ title.get_absolute_url }}">( {% trans "Permalink" %} → )</a>
                 </p>
             </div><!-- .post-entry -->
             <div class="lineDivider"></div>
         </article>
+    {% endwith %}
     {% endwith %}
     {% endwith %}
 {% endfor %}
