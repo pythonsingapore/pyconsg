@@ -1,19 +1,39 @@
 # -*- coding: utf-8 -*-
 import datetime
 from south.db import db
-from south.v2 import DataMigration
+from south.v2 import SchemaMigration
 from django.db import models
 
-class Migration(DataMigration):
+
+class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        "Write your forwards methods here."
-        # Note: Remember to use orm['appname.ModelName'] rather than "from appname.models..."
-        db.delete_table('cms_file')
-        db.delete_table('cms_page')
+        # Adding field 'StartupBoothProposal.startup_url'
+        db.add_column('proposals_pyconsg_startupboothproposal', 'startup_url',
+                      self.gf('django.db.models.fields.URLField')(default=None, max_length=200),
+                      keep_default=False)
+
+        # Adding field 'StartupBoothProposal.startup_age'
+        db.add_column('proposals_pyconsg_startupboothproposal', 'startup_age',
+                      self.gf('django.db.models.fields.CharField')(default=None, max_length=16),
+                      keep_default=False)
+
+        # Adding field 'StartupBoothProposal.is_launched'
+        db.add_column('proposals_pyconsg_startupboothproposal', 'is_launched',
+                      self.gf('django.db.models.fields.BooleanField')(default=False),
+                      keep_default=False)
+
 
     def backwards(self, orm):
-        "Write your backwards methods here."
+        # Deleting field 'StartupBoothProposal.startup_url'
+        db.delete_column('proposals_pyconsg_startupboothproposal', 'startup_url')
+
+        # Deleting field 'StartupBoothProposal.startup_age'
+        db.delete_column('proposals_pyconsg_startupboothproposal', 'startup_age')
+
+        # Deleting field 'StartupBoothProposal.is_launched'
+        db.delete_column('proposals_pyconsg_startupboothproposal', 'is_launched')
+
 
     models = {
         'auth.group': {
@@ -101,8 +121,11 @@ class Migration(DataMigration):
         'proposals_pyconsg.startupboothproposal': {
             'Meta': {'object_name': 'StartupBoothProposal'},
             'audience_level': ('django.db.models.fields.IntegerField', [], {}),
+            'is_launched': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'proposalbase_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['proposals.ProposalBase']", 'unique': 'True', 'primary_key': 'True'}),
-            'recording_release': ('django.db.models.fields.BooleanField', [], {'default': 'True'})
+            'recording_release': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
+            'startup_age': ('django.db.models.fields.CharField', [], {'max_length': '16'}),
+            'startup_url': ('django.db.models.fields.URLField', [], {'max_length': '200'})
         },
         'proposals_pyconsg.talkproposal': {
             'Meta': {'object_name': 'TalkProposal'},
@@ -132,4 +155,3 @@ class Migration(DataMigration):
     }
 
     complete_apps = ['proposals_pyconsg']
-    symmetrical = True

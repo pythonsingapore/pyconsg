@@ -1,58 +1,18 @@
 [
     {
-        "pk": 9, 
-        "model": "cms.page", 
+        "pk": 1, 
+        "model": "cms.placeholder", 
         "fields": {
-            "body": "Lorem ipsum...", 
-            "status": 2, 
-            "updated": "2013-01-19T17:07:53.664", 
-            "created": "2013-01-19T17:07:53.655", 
-            "_body_rendered": "<p>Lorem ipsum...</p>", 
-            "title": "Tutorials", 
-            "publish_date": "2013-01-19T17:07:53.655", 
-            "path": "tutorials/"
+            "slot": "excerpt", 
+            "default_width": null
         }
     }, 
     {
-        "pk": 10, 
-        "model": "cms.page", 
+        "pk": 2, 
+        "model": "cms.placeholder", 
         "fields": {
-            "body": "Lorem ipsum...", 
-            "status": 2, 
-            "updated": "2013-01-19T17:08:02.590", 
-            "created": "2013-01-19T17:08:02.581", 
-            "_body_rendered": "<p>Lorem ipsum...</p>", 
-            "title": "Talks", 
-            "publish_date": "2013-01-19T17:08:02.581", 
-            "path": "talks/"
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "cms.page", 
-        "fields": {
-            "body": "Lorem ipsum...", 
-            "status": 2, 
-            "updated": "2013-01-19T17:09:41.742", 
-            "created": "2013-01-19T17:09:41.733", 
-            "_body_rendered": "<p>Lorem ipsum...</p>", 
-            "title": "Hackathon", 
-            "publish_date": "2013-01-19T17:09:41.733", 
-            "path": "hackathon/"
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "cms.page", 
-        "fields": {
-            "body": "Lorem ipsum...", 
-            "status": 2, 
-            "updated": "2013-01-19T17:09:50.922", 
-            "created": "2013-01-19T17:09:50.912", 
-            "_body_rendered": "<p>Lorem ipsum...</p>", 
-            "title": "Venue", 
-            "publish_date": "2013-01-19T17:09:50.912", 
-            "path": "venue/"
+            "slot": "content", 
+            "default_width": null
         }
     }
 ]

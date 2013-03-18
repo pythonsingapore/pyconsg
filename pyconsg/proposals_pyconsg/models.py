@@ -1,5 +1,6 @@
 """ProposalBase implementations for the PyCon SG project."""
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 
 from symposion.proposals.models import ProposalBase
 
@@ -50,3 +51,26 @@ class TutorialProposal(Proposal):
 class StartupBoothProposal(Proposal):
     class Meta:
         verbose_name = 'startup booth proposal'
+
+    AGE_CHOICES = [
+        ('0-3', _('0 - 3 months')),
+        ('4-6', _('4 - 6 months')),
+        ('7-9', _('7 - 9 months')),
+        ('10-12', _('10 - 12 months')),
+        ('12+', _('Over a year')),
+    ]
+
+    startup_url = models.URLField(
+        verbose_name=_('What is the URL of your startup?'),
+    )
+
+    startup_age = models.CharField(
+        max_length=16,
+        choices=AGE_CHOICES,
+        verbose_name=_('How old is your startup?'),
+    )
+
+    is_launched = models.BooleanField(
+        default=False,
+        verbose_name=_('Have you launched?'),
+    )

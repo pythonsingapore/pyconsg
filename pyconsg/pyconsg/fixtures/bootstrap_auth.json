@@ -9,7 +9,7 @@
             "is_active": true, 
             "is_superuser": true, 
             "is_staff": true, 
-            "last_login": "2013-01-27T22:38:08.125", 
+            "last_login": "2013-03-18T12:34:51.351", 
             "groups": [], 
             "user_permissions": [], 
             "password": "pbkdf2_sha256$10000$1rkLFWkvrv5D$hadOe3d8b2CZbmOwsLDl06h/dw7QvAd5AvsmnAVFVEs=", 
@@ -22,17 +22,17 @@
         "model": "auth.user", 
         "fields": {
             "username": "571884718bf9cfdd64f5ef9cc1792", 
-            "first_name": "John", 
-            "last_name": "Smith", 
+            "first_name": "Wes", 
+            "last_name": "McKinney", 
             "is_active": true, 
             "is_superuser": false, 
             "is_staff": false, 
-            "last_login": "2013-02-02T14:41:07.165", 
+            "last_login": "2013-03-18T12:41:36.637", 
             "groups": [], 
             "user_permissions": [], 
             "password": "pbkdf2_sha256$10000$ASdtaXECoTGu$zt+kddNPqaNJVW0dD2oPYxkJiVojiG3J5EUVqQcFmLQ=", 
             "email": "speaker@example.com", 
-            "date_joined": "2013-01-27T22:34:22.848"
+            "date_joined": "2013-01-27T22:34:22"
         }
     }
 ]

@@ -68,15 +68,32 @@ class StartupBoothProposalForm(ProposalForm):
     class Meta:
         model = StartupBoothProposal
         fields = [
-            "title",
-            "audience_level",
-            "description",
-            "abstract",
-            "additional_notes",
-            "recording_release",
-
+            'title',
+            'startup_url',
+            'startup_age',
+            'is_launched',
+            'abstract',
+            'description',
+            'additional_notes',
         ]
+
         widgets = {
-            "abstract": MarkItUpWidget(),
-            "additional_notes": MarkItUpWidget(),
+            'abstract': MarkItUpWidget(),
+            'description': MarkItUpWidget(),
+            'additional_notes': MarkItUpWidget(),
         }
+
+    def __init__(self, *args, **kwargs):
+        super(StartupBoothProposalForm, self).__init__(*args, **kwargs)
+        self.fields['title'].label = _('What is the name of your startup?')
+        self.fields['abstract'].label = _(
+            'What do you use Python in your startup?')
+        self.fields['abstract'].help_text = None
+        self.fields['description'].label = _('What does your startup do?')
+        self.fields['description'].help_text = None
+        self.initial['audience_level'] = 1
+
+    def save(self, *args, **kwargs):
+        instance = super(StartupBoothProposalForm, self).save(*args, **kwargs)
+        instance.audience_level = 1
+        return instance
