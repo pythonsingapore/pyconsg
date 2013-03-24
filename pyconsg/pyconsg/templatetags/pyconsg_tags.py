@@ -17,3 +17,10 @@ def get_latest_blog_entries(amount=5):
 def get_speaker(name):
     """Returns a speaker object selected by the given name."""
     return Speaker.objects.get(name=name)
+
+
+@register.assignment_tag
+def get_speakers():
+    """Returns all speakers with accepted proposals."""
+    speakers = Speaker.objects.filter(presentations__isnull=False)
+    return speakers

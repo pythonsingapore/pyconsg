@@ -26,10 +26,31 @@
                                 <img src="{{ speaker.photo.url }}" alt="{{ speaker.name }}" width="150" height="150">
                             </div><!-- .speaker-thumb -->
                             <h3>{{ speaker.name }}</h3>
-                            <p>{{ speaker.biography|safe }}</p>
+                            <p>{{ speaker.biography|safe|truncatewords_html:30 }} <a href="{% url "speaker_profile" pk=speaker.pk %}">( Read More → )</a></p>
                         </div><!-- .speaker-wraper -->
                     </li>
                 </ul>
+
+                <div class="lineDivider"></div>
+
+                <h2>PyCon Singapore 2013 Speakers</h2>
+
+                <ul id="speakers-secondary-list">
+                    {% get_speakers as speakers %}
+                    {% for speaker in speakers %}
+                        {% if speaker.photo %}
+                            <li>
+                                <div class="speaker-wraper">
+                                    <div class="speaker-thumb left">
+                                        <img src="{{ speaker.photo.url }}" alt="{{ speaker.name }}" width="100" height="100">
+                                    </div><!-- .speaker-thumb -->
+                                    <h3>{{ speaker.name }}</h3>
+                                    <p>{{ speaker.biography|safe|truncatewords_html:30 }} <a href="{% url "speaker_profile" pk=speaker.pk %}">( Read More → )</a></p>
+                                </div><!-- .speaker-wraper -->
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+     			</ul>
             </div>
         </div>
     </div>
