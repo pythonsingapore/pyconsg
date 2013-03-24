@@ -37,7 +37,7 @@
     <dt>{% trans "Speaker Photo" %}</dt>
     <dd>
         {% if proposal.speaker.photo %}
-            <a href="{{ proposal.speaker.photo.url }}"><img src="{{ proposal.speaker.photo.url }}" height="100px"/></a>
+            <a href="{{ proposal.speaker.photo.url }}"><img src="{{ proposal.speaker.photo.url }}" style="height:100px"/></a>
         {% else %}
             No photo uploaded
         {% endif %}
