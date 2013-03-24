@@ -1,0 +1,8 @@
+<div class="speaker-wraper">
+    <div class="speaker-thumb left">
+        <img src="{{ speaker.photo.url }}" alt="{{ speaker.name }}" width="{{ photo_width|default:"150" }}" height="{{ photo_width|default:"150" }}">
+    </div><!-- .speaker-thumb -->
+    {% url "speaker_profile" pk=speaker.pk as speaker_url %}
+    <h3><a href="{{ speaker_url }}" >{{ speaker.name }}</a></h3>
+    <p>{{ speaker.biography|safe|truncatewords_html:30 }} <a href="{{ speaker_url }}">( Read More → )</a></p>
+</div><!-- .speaker-wraper -->
