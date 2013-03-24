@@ -33,6 +33,9 @@
     
     <dt>{% trans "Notes" %}</dt>
     <dd>{{ proposal.additional_notes|safe }}&nbsp;</dd>
+
+    <dt>{% trans "Speaker Photo" %}</dt>
+    <dd><a href="{{ proposal.speaker.photo.url }}"><img src="{{ proposal.speaker.photo.url }}" height="100px"/></a></dd>
     
     <dt>{% trans "Speaker Bio" %}</dt>
     <dd>{{ proposal.speaker.biography|safe }}&nbsp;</dd>

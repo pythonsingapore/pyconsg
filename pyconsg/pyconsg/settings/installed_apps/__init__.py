@@ -20,6 +20,7 @@ EXTERNAL_APPS = [
     'admin_honeypot',
     'debug_toolbar',
     'mailer',
+    'django_extensions',
 
     # theme
     # 'pinax_theme_bootstrap_account',
