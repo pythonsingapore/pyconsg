@@ -1,5 +1,6 @@
 {% extends "site_base.html" %}
-{% load i18n boxes_tags %}
+{% load i18n boxes_tags pyconsg_tags thumbnail %}
+{% load url from future %}
 
 {% block head_title_base %}{% trans "Welcome" %} | {{ block.super }}{% endblock %}
 
@@ -37,6 +38,41 @@
 
 {% block body_base %}
 {% include "partials/countdown.html" %}
+
+<div id="speakers-wraper" class="container container-twelve">
+    <div class="twelve columns">
+        <div class=" container-box">
+            <div class="container-box-inner">
+                <h2 class="heading center"><span>The speakers</span></h2>
+                <div id="speakers">
+                    <div id="carousel" class="flexslider">
+                        <ul class="slides" style="width: 2200%; -webkit-transition: 0.6s; transition: 0.6s; -webkit-transform: translate3d(-800px, 0, 0);">
+                            {% get_speakers as speakers %}
+                            {% for speaker in speakers %}
+                                {% if speaker.photo %}
+                                    {% url "speaker_profile" pk=speaker.pk as speaker_url %}
+                                    <li style="width: 150px; float: left; display: block;">
+                                        <a href="{{ speaker_url }}">
+                                            <img src="{% thumbnail speaker.photo 150x150 crop upscale %}" alt="speaker2" width="150" height="150">
+                                        </a>
+                                        <div class="speaker-desc" style="bottom: -70px;">
+                                            <a href="{{ speaker_url }}">{{ speaker.name }}</a><br>
+                                        </div><!-- .speaker-desc -->
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <ul class="flex-direction-nav">
+                            <li><a class="flex-prev" href="#">Previous</a></li>
+                            <li><a class="flex-next" href="#">Next</a></li>
+                        </ul>
+                    </div><!-- .flexslider -->
+                </div><!-- #speakers -->
+            </div><!-- .container-box.inner -->
+        </div><!-- .container-box -->
+        <div class="box-bottom bottom-full"></div>
+    </div>
+</div>
 
 <div class="container container-twelve">
     <div id="counter-container" class="twelve columns container-box">
