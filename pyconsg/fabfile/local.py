@@ -21,6 +21,11 @@ def create_database():
               USER_AND_HOST, settings.PROJECT_NAME))
 
 
+def import_database(filename):
+    """Imports the given database."""
+    local('pg_restore -O -c -U pyconsg -d pyconsg {0}'.format(filename))
+
+
 def drop_database():
     """Drops the local database."""
     with fab_settings(warn_only=True):

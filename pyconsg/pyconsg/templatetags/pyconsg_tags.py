@@ -2,6 +2,7 @@
 from django import template
 
 from cmsplugin_blog.models import Entry
+from symposion.schedule.models import Room
 from symposion.speakers.models import Speaker
 
 
@@ -11,6 +12,11 @@ register = template.Library()
 @register.assignment_tag
 def get_latest_blog_entries(amount=5):
     return Entry.objects.all().published()[:amount]
+
+
+@register.assignment_tag
+def get_rooms():
+    return Room.objects.all()
 
 
 @register.assignment_tag
