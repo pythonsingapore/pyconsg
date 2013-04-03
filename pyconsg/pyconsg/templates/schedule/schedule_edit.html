@@ -1,0 +1,43 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+{% load bootstrap_tags %}
+
+{% block head_title %}Conference Schedule Edit{% endblock %}
+
+{% block body_class %}full{% endblock %}
+
+{% block right %}
+{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}chosen/chosen.css" />
+{% endblock %}
+
+{% block body %}
+<div class="twelve columns alpha">
+    <div class="container-box-inner">
+        <h1>Schedule Edit</h1>
+        {% for timetable in days %}
+            <h2>{{ timetable.day.date }}</h2>
+            {% include "schedule/_edit_grid.html" %}
+        {% endfor %}
+    </div>
+</div>
+<div class="modal fade hide in" id="slotEditModal"></div>
+{% endblock %}
+
+{% block extra_script %}
+<script src="{{ STATIC_URL }}chosen/chosen.jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function() {
+        $("a.edit-slot").click(function(e) {
+            $("#slotEditModal").load($(this).data("action"), function() {
+                $("#id_presentation").chosen();
+                $("#slotEditModal").modal("show");
+            });
+            e.preventDefault();
+        });
+    });
+</script>
+{% endblock %}
