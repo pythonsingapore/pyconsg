@@ -1,0 +1,17 @@
+{% load url from future %}
+
+<div class="row">
+    <div class="span8 presentation well">
+        <h3><a href="{% url "schedule_presentation_detail" presentation.pk %}">{{ presentation.title }}</a></h3>
+        <h4>{{ presentation.speakers|join:", " }} in {{ presentation.proposal.category }}</h4>
+        {{ presentation.description }}
+        {% if presentation.slot %}
+            <h4>
+                {{ presentation.slot.day.date|date:"l" }}
+                {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
+                in
+                {{ presentation.slot.rooms|join:", " }}
+            </h4>
+        {% endif %}
+    </div>
+</div>

@@ -24,25 +24,34 @@
     </style>
 {% endblock %}
 
-{% block body %}
-    <h2>Accepted {{ schedule.section.name }}</h2>
-    {% cache 600 "schedule-list" schedule.section.name %}
-        {% for presentation in presentations %}
-            <div class="row">
-                <div class="span8 presentation well">
-                    <h3><a href="{% url schedule_presentation_detail presentation.pk %}">{{ presentation.title }}</a></h3>
-                    <h4>{{ presentation.speakers|join:", " }} in {{ presentation.proposal.category }}</h4>
-                    {{ presentation.description }}
-                    {% if presentation.slot %}
-                        <h4>
-                            {{ presentation.slot.day.date|date:"l" }}
-                            {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
-                            in
-                            {{ presentation.slot.rooms|join:", " }}
-                        </h4>
+{% block body_base %}
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="twelve columns alpha">
+            <div class="container-box-inner">
+                <h2>Accepted Tutorials</h2>
+                {% for presentation in presentations %}
+                    {% if presentation.proposal_base.kind.slug == "tutorial" %}
+                        {% include "schedule/partials/accepted_talk.html" %}
                     {% endif %}
-                </div>
+                {% endfor %}
             </div>
-        {% endfor %}
-    {% endcache %}
+        </div>
+    </div>
+</div>
+
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="twelve columns alpha">
+            <div class="container-box-inner">
+                <h2>Accepted Talks</h2>
+                {% for presentation in presentations %}
+                    {% if presentation.proposal_base.kind.slug == "talk" %}
+                        {% include "schedule/partials/accepted_talk.html" %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
