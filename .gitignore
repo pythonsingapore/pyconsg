@@ -1,5 +1,8 @@
+.*.s[a-w][a-z]
 *.pyc
 coverage/
 docs/build/
 docs/source/api/
 local_settings.py
+pyconsg_media
+*.sql
