@@ -1,0 +1,53 @@
+{% extends "site_base.html" %}
+{% load i18n bootstrap_tags %}
+
+{% block body %}
+<div class="twelve columns alpha">
+    <div class="container-box-inner">
+        <h1>{% trans "How many tickets do you need?" %}</h1>
+    </div>
+</div>
+
+<div class="six columns alpha">
+    <div class="container-box-inner">
+        <form class="form-horizontal" method="post" action=".">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">{% trans "Conference tickets" %}</label>
+                <div class="controls">
+                    {{ form.conference_tickets }} <span>S${{ form.conference_item.value }}</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">{% trans "Conference tickets (Student rate)" %}</label>
+                <div class="controls">
+                    {{ form.student_tickets }} <span>S${{ form.student_item.value }}</span>
+                </div>
+            </div>
+
+
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">{% trans "Tutorial tickets" %}</label>
+                <div class="controls">
+                    {{ form.tutorial_tickets }} <span>S${{ form.tutorial_item.value }}</span>
+                </div>
+            </div>
+
+            <input class="btn btn-primary" id="payPalButton" type="submit" name="METHOD" value="{% trans "Checkout with PayPal" %}" />
+        </form>
+    </div>
+</div>
+
+<div class="six columns omega">
+    <div class="container-box-inner">
+        <p>{% trans "The <strong>conference ticket</strong> entitles you to attend the main conferende on June 14-15." %}</p>
+        <p>{% trans "You can also attend up to two <strong>tutorials</strong> on June 13 (one in the morning and one in the afternoon)." %}</p>
+        <p>{% trans "Please note that you will be able to register for your desired tutorials from your user profile, soon." %}</p>
+        <p>{% trans "If you buy a conference ticket at <strong>student rate</strong> you need to show evidence of student ID at the conference registration." %}</p>
+    </div>
+</div>
+{% endblock %}

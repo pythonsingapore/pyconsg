@@ -1,0 +1,11 @@
+{% extends "site_base.html" %}
+{% load i18n %}
+{% block body %}
+<div class="twelve columns alpha">
+    <div class="container-box-inner">
+        <h1>{% trans "Ooops!" %}</h1>
+        <p>{% trans "There was an error during the payment process." %}</p>
+        <p>{% trans "Don't panic! We have logged the error code and sent an email to our admins. We will get back to you as soon as possible to resolve this issue." %}</p>
+    </div>
+</div>
+{% endblock %}

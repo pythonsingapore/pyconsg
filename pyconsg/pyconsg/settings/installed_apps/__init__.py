@@ -21,6 +21,7 @@ EXTERNAL_APPS = [
     'debug_toolbar',
     'mailer',
     'django_extensions',
+    'paypal_express_checkout',
 
     # theme
     # 'pinax_theme_bootstrap_account',
@@ -68,6 +69,7 @@ EXTERNAL_APPS = [
 INTERNAL_APPS = [
     'pyconsg',
     'proposals_pyconsg',
+    'paypal_pyconsg',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
@@ -77,4 +79,5 @@ from .cms import *  # NOQA
 from .debug_toolbar import *  # NOQA
 from .mailer import *  # NOQA
 from .markitup import *  # NOQA
+from .paypal_express_checkout import *  # NOQA
 from .symposion import *  # NOQA
