@@ -28,5 +28,5 @@ def get_speaker(name):
 @register.assignment_tag
 def get_speakers():
     """Returns all speakers with accepted proposals."""
-    speakers = Speaker.objects.filter(presentations__isnull=False)
+    speakers = Speaker.objects.filter(presentations__isnull=False).distinct()
     return speakers
