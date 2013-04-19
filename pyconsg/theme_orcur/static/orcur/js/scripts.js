@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 	var dDay = new Date();
 				//   year - month - day
-	dDay = new Date( 2013, 5, 13);
+	dDay = new Date( 2013, 6, 13);
 	$('.counter').countdown({
         until: dDay
         ,format: 'dHM'
