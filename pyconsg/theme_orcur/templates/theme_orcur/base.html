@@ -1,4 +1,4 @@
-{% load sekizai_tags %}
+{% load compress sekizai_tags %}
 <!doctype html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -26,6 +26,7 @@
 	<!-- CSS
   ================================================== -->
     {% block style_base %}
+    {% compress css %}
     <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" />
 
@@ -36,6 +37,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}orcur/css/blue/styles.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}orcur/css/skeleton.min.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}orcur/css/jquery.countdown.css" />
+    {% endcompress %}
     {% endblock style_base %}
 
     {% block noscript_base %}
@@ -168,6 +170,7 @@
 	================================================== -->
     {% block script_base %}
 
+    {% compress js %}
 	<!-- All Scripts -->
 	<script type="text/javascript" src="{{ STATIC_URL }}orcur/js/scripts.js"></script>
 	<!-- jQuery Countdown -->
@@ -181,6 +184,7 @@
 	<link rel="stylesheet" href="{{ STATIC_URL }}orcur/js/prettyPhoto/css/prettyPhoto.css" media="screen" />
 	<!-- bootstrap -->
     <script type="text/javascript"  src="{{ STATIC_URL }}js/libs/bootstrap.min.js"></script>
+    {% endcompress %}
 
 	<script>
 

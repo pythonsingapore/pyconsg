@@ -12,6 +12,9 @@ ADMIN_URL = r'^admin/'
 ANALYTICS_TRACKING_ID = ''
 DEFAULT_HTTP_PROTOCOL = 'http'
 
+# Set this to True on the server
+# COMPRESS_ENABLED = True
+
 # =============================================================================
 # DATABASE SETTINGS
 # =============================================================================

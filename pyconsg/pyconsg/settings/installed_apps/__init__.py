@@ -22,6 +22,7 @@ EXTERNAL_APPS = [
     'mailer',
     'django_extensions',
     'paypal_express_checkout',
+    'compressor',
 
     # theme
     # 'pinax_theme_bootstrap_account',
