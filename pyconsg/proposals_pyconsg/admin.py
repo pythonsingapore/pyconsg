@@ -7,6 +7,18 @@ from proposals_pyconsg.models import (
 )
 
 
-admin.site.register(TalkProposal)
-admin.site.register(TutorialProposal)
-admin.site.register(StartupBoothProposal)
+class TalkProposalAdmin(admin.ModelAdmin):
+    list_display = ['title', 'speaker', 'submitted']
+
+
+class TutorialProposalAdmin(admin.ModelAdmin):
+    list_display = ['title', 'speaker', 'submitted']
+
+
+class StarupBoothProposalAdmin(admin.ModelAdmin):
+    list_display = ['title', 'speaker', 'submitted']
+
+
+admin.site.register(TalkProposal, TalkProposalAdmin)
+admin.site.register(TutorialProposal, TutorialProposalAdmin)
+admin.site.register(StartupBoothProposal, StarupBoothProposalAdmin)
