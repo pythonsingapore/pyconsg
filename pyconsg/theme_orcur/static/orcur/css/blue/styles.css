@@ -2,6 +2,21 @@ a {
     color: #3773a5;
 }
 
+.acceptedTalkSpeaker img {
+    float: left;
+}
+
+.acceptedTalkSpeaker a {
+    float: left;
+    display: block;
+    padding-top: 18px;
+    margin-left: 10px;
+}
+
+.acceptedTalkSpeaker {
+    clear: both;
+}
+
 .btn {
     margin-bottom: 0px !important;
 }
