@@ -12,15 +12,7 @@ from symposion.schedule.models import Presentation
 from paypal_express_checkout.models import Item
 from paypal_express_checkout.forms import SetExpressCheckoutFormMixin
 
-
-TSHIRT_CHOICES = (
-    ('XS', 'XS'),
-    ('S', 'S'),
-    ('L', 'L'),
-    ('XL', 'XL'),
-    ('XXL', 'XXL'),
-    ('XXXL', 'XXXL'),
-)
+from .models import CheckoutChoices, TSHIRT_CHOICES
 
 
 class PyconsgSetExpressCheckoutForm(SetExpressCheckoutFormMixin):
@@ -100,3 +92,16 @@ class PyconsgSetExpressCheckoutForm(SetExpressCheckoutFormMixin):
         if tutorial_amount:
             result.append((self.tutorial_item, tutorial_amount))
         return result
+
+    def post_transaction_save(self, transaction, item_quantity_list):
+        CheckoutChoices.objects.filter(user=self.user).delete()
+        choices = CheckoutChoices.objects.create(
+            user=self.user, transaction=transaction)
+        choices.is_student = self.cleaned_data.get('student_rate')
+        choices.has_conference_ticket = self.cleaned_data.get(
+            'conference_ticket')
+        choices.tutorial_morning = self.cleaned_data.get('tutorial_morning')
+        choices.tutorial_afternoon = self.cleaned_data.get(
+            'tutorial_afternoon')
+        choices.tshirt_size = self.cleaned_data.get('tshirt_size')
+        choices.save()
