@@ -32,7 +32,16 @@
             <div class="control-group">
                 <label class="control-label" for="inputEmail">{{ form.conference_ticket.label }}</label>
                 <div class="controls">
-                    {{ form.conference_ticket }} <span id="conferencePrice">S${{ form.conference_item.value }}</span><span id="conferencePriceStudent" style="display:hidden;">S${{ form.conference_student.value }}</span>
+                    {{ form.conference_ticket }} <span id="conferencePrice">S${{ form.conference_item.value }}</span><span id="conferencePriceStudent" style="display:none;">S${{ form.student_item.value }}</span>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">{% trans "Tutorial price:" %}</label>
+                <div class="controls">
+                    <span id="tutorialPrice">S${{ form.tutorial_item.value }}</span>
                 </div>
             </div>
 
@@ -49,6 +58,8 @@
                     {{ form.tutorial_afternoon }}
                 </div>
             </div>
+
+            <hr />
 
             <div class="control-group">
                 <label class="control-label" for="inputEmail">{{ form.tshirt_size.label }}</label>
@@ -70,4 +81,18 @@
         <p>{% trans "If you buy a conference ticket at <strong>student rate</strong> you need to show evidence of student ID at the conference registration." %}</p>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+    $('#id_student_rate').click(function() {
+        if($(this).is(':checked')) {
+            $('#conferencePrice').hide();
+            $('#conferencePriceStudent').show();
+        } else {
+            $('#conferencePrice').show();
+            $('#conferencePriceStudent').hide();
+        }
+    });
+</script>
 {% endblock %}
