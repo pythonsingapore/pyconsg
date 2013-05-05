@@ -15,25 +15,45 @@
             {% for hidden in form.hidden_fields %}
                 {{ hidden }}
             {% endfor %}
+
+            {% if form.non_field_errors %}
+                <div class="alert">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
             <div class="control-group">
-                <label class="control-label" for="inputEmail">{% trans "Conference tickets" %}</label>
+                <label class="control-label" for="inputEmail">{{ form.student_rate.label }}</label>
                 <div class="controls">
-                    {{ form.conference_tickets }} <span>S${{ form.conference_item.value }}</span>
+                    {{ form.student_rate }}
                 </div>
             </div>
 
             <div class="control-group">
-                <label class="control-label" for="inputEmail">{% trans "Conference tickets (Student rate)" %}</label>
+                <label class="control-label" for="inputEmail">{{ form.conference_ticket.label }}</label>
                 <div class="controls">
-                    {{ form.student_tickets }} <span>S${{ form.student_item.value }}</span>
+                    {{ form.conference_ticket }} <span id="conferencePrice">S${{ form.conference_item.value }}</span><span id="conferencePriceStudent" style="display:hidden;">S${{ form.conference_student.value }}</span>
                 </div>
             </div>
 
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">{{ form.tutorial_morning.label }}</label>
+                <div class="controls">
+                    {{ form.tutorial_morning }}
+                </div>
+            </div>
 
             <div class="control-group">
-                <label class="control-label" for="inputEmail">{% trans "Tutorial tickets" %}</label>
+                <label class="control-label" for="inputEmail">{{ form.tutorial_afternoon.label }}</label>
                 <div class="controls">
-                    {{ form.tutorial_tickets }} <span>S${{ form.tutorial_item.value }}</span>
+                    {{ form.tutorial_afternoon }}
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">{{ form.tshirt_size.label }}</label>
+                <div class="controls">
+                    {{ form.tshirt_size }}
                 </div>
             </div>
 
