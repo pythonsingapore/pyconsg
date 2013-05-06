@@ -4,26 +4,37 @@
 
 {% block head_title %}{% trans "Log in" %} | {{ block.super }}{% endblock %}
 
-{% block body %}
-<div class="eight columns alpha">
-    <div class="container-box-inner">
-        <h1>{% trans "Log in to an existing account" %}</h1>
-        <form method="POST" action="{% url "account_login" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
-            {% csrf_token %}
-            {{ form|as_bootstrap }}
-            {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-            {% endif %}
-            <div class="form-actions">
-                <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
-                <a href="{% url "account_password_reset" %}" class="btn">{% trans "Forgot your password?" %}</a>
+{% block body_base %}
+<div class="container container-twelve">
+    <div class="eight columns alpha">
+        <div class="container-box">
+            <div class="container-box-inner">
+                <h2 class="heading">{% trans "Log in to your pycon.sg account" %}</h2>
+                <form method="POST" action="{% url "account_login" %}" autocapitalize="off" class="form-horizontal"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+                    {% csrf_token %}
+                    {{ form|as_bootstrap }}
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
+                        <a href="{% url "account_password_reset" %}" class="btn">{% trans "Forgot your password?" %}</a>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
-</div>
-<div class="four columns omega">
-    <div class="container-box-inner">
-        {% include "account/_login_sidebar.html" %}
+        </div>
+        <div class="box-bottom bottom-main"></div>
+   </div>
+
+    <div class="four columns omega">
+        <div class="container-box">
+            <div class="container-box-inner">
+                <h2 class="heading">{% trans "Why login?" %}</h2>
+                <p>{% trans "If you haven't done this already, you need to <a href='/account/signup/'>create a user account</a>" %} and login in order to participate.</p>
+                <p>{% trans "Once logged-in, you will be able to buy conference tickets or you could submit talk proposals or apply to be a sponsor." %}</p>
+            </div>
+        </div>
+        <div class="box-bottom bottom-main"></div>
     </div>
 </div>
 {% endblock %}
