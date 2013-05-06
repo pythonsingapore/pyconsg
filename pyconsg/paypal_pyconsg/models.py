@@ -6,8 +6,8 @@ from django.utils.translation import ugettext_lazy as _
 TSHIRT_CHOICES = (
     ('XS', 'XS'),
     ('S', 'S'),
-    ('L', 'L'),
     ('M', 'M'),
+    ('L', 'L'),
     ('XL', 'XL'),
     ('XXL', 'XXL'),
     ('XXXL', 'XXXL'),
