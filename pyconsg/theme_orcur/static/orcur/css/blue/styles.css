@@ -2,6 +2,10 @@ a {
     color: #3773a5;
 }
 
+.abstract ul {
+    list-style-type: disc;
+}
+
 .acceptedTalkSpeaker img {
     float: left;
 }
