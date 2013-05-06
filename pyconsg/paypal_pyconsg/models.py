@@ -7,6 +7,7 @@ TSHIRT_CHOICES = (
     ('XS', 'XS'),
     ('S', 'S'),
     ('L', 'L'),
+    ('M', 'M'),
     ('XL', 'XL'),
     ('XXL', 'XXL'),
     ('XXXL', 'XXXL'),
