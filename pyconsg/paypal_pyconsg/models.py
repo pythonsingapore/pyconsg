@@ -3,6 +3,13 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
+FOOD_CHOICES = (
+    ('', '----------'),
+    ('V', 'Vegetarian'),
+    ('VG', 'Vegan'),
+)
+
+
 TSHIRT_CHOICES = (
     ('XS', 'XS'),
     ('S', 'S'),
@@ -68,5 +75,12 @@ class CheckoutChoices(models.Model):
         max_length=5,
         choices=TSHIRT_CHOICES,
         verbose_name=_('T-Shirt size'),
+        null=True, blank=True,
+    )
+
+    food_choice = models.CharField(
+        max_length=5,
+        choices=FOOD_CHOICES,
+        verbose_name=_('Food preference'),
         null=True, blank=True,
     )

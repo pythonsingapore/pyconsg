@@ -12,7 +12,7 @@ from symposion.schedule.models import Presentation
 from paypal_express_checkout.models import Item
 from paypal_express_checkout.forms import SetExpressCheckoutFormMixin
 
-from .models import CheckoutChoices, TSHIRT_CHOICES
+from .models import CheckoutChoices, FOOD_CHOICES, TSHIRT_CHOICES
 
 
 class PyconsgSetExpressCheckoutForm(SetExpressCheckoutFormMixin):
@@ -52,6 +52,12 @@ class PyconsgSetExpressCheckoutForm(SetExpressCheckoutFormMixin):
         label=_('T-Shirt size'),
         choices=TSHIRT_CHOICES,
         initial='L',
+    )
+
+    food_choice = forms.ChoiceField(
+        label=_('Food preference'),
+        choices=FOOD_CHOICES,
+        initial=None,
     )
 
     def __init__(self, *args, **kwargs):
@@ -104,4 +110,5 @@ class PyconsgSetExpressCheckoutForm(SetExpressCheckoutFormMixin):
         choices.tutorial_afternoon = self.cleaned_data.get(
             'tutorial_afternoon')
         choices.tshirt_size = self.cleaned_data.get('tshirt_size')
+        choices.food_Choice = self.cleaned_data.get('food_choice')
         choices.save()

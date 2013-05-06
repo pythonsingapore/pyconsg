@@ -68,7 +68,14 @@
                 </div>
             </div>
 
-            <input class="btn btn-primary" id="payPalButton" type="submit" name="METHOD" value="{% trans "Checkout with PayPal" %}" />
+             <div class="control-group">
+                <label class="control-label" for="inputEmail">{{ form.food_choice.label }}</label>
+                <div class="controls">
+                    {{ form.food_choice }}
+                </div>
+            </div>
+
+           <input class="btn btn-primary" id="payPalButton" type="submit" name="METHOD" value="{% trans "Checkout with PayPal" %}" />
         </form>
     </div>
 </div>
