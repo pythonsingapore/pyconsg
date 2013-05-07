@@ -103,5 +103,12 @@
             $('#conferencePriceStudent').hide();
         }
     });
+
+    $("#id_tutorial_morning, #id_tutorial_afternoon").change(function() {
+        if ($("#id_tutorial_morning").val() && $("#id_tutorial_afternoon").val()) {
+           $("#tutorialPrice").text("S$100.00");
+        }
+    });
+
 </script>
 {% endblock %}
