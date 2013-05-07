@@ -41,7 +41,8 @@
             <div class="control-group">
                 <label class="control-label" for="inputEmail">{% trans "Tutorial price:" %}</label>
                 <div class="controls">
-                    <span id="tutorialPrice">S${{ form.tutorial_item.value }}</span>
+                    <span id="tutorialPrice">S$0.00</span>
+                    <span>(Each session @ S${{ form.tutorial_item.value }})</span>
                 </div>
             </div>
 
@@ -107,8 +108,10 @@
     $("#id_tutorial_morning, #id_tutorial_afternoon").change(function() {
         if ($("#id_tutorial_morning").val() && $("#id_tutorial_afternoon").val()) {
            $("#tutorialPrice").text("S$100.00");
-        } else {
+        } else if ($("#id_tutorial_morning").val() || $("#id_tutorial_afternoon").val()) {
            $("#tutorialPrice").text("S$50.00");
+        } else {
+           $("#tutorialPrice").text("S$0.00");
         }
     });
 
