@@ -58,6 +58,7 @@ class PyconsgSetExpressCheckoutForm(SetExpressCheckoutFormMixin):
         label=_('Food preference'),
         choices=FOOD_CHOICES,
         initial=None,
+        required=False,
     )
 
     def __init__(self, *args, **kwargs):
