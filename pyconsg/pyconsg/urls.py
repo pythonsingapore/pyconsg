@@ -59,6 +59,7 @@ urlpatterns += patterns(
     url(r'^checkout/', include('paypal_express_checkout.urls')),
 
     url(r'^schedule/', include('symposion.schedule.urls')),
+    url(r'^dashboard/checkout-choices/', include('paypal_pyconsg.urls')),
     url(r'^dashboard/', symposion.views.dashboard, name='dashboard'),
     url(r'^speaker/', include('symposion.speakers.urls')),
     url(r'^proposals/', include('symposion.proposals.urls')),

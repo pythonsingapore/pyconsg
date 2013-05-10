@@ -11,6 +11,36 @@
 {% block body %}
 <div class="dashboard-panel">
     <div class="dashboard-panel-header">
+        <h3>{% trans "Your conference ticket" %}</h3>
+    </div>
+
+    <div class="dashboard-panel-content dashboard-checkout-choices">
+        {% if not user.checkout_choices %}
+            <p>You have not bought a conference ticket, yet :-(<p>
+            <a class="btn btn-primary" href="{% url paypal_checkout %}">Get your ticket now</a>.
+        {% else %}
+            <p>Below are the choices you made during checkout. Feel free to change them if you change your mind. Please note that changes will no longer be possible one week before the conference.</p>
+            {% if user.checkout_choices.tutorial_morning %}
+                <div><label>Tutorial (morning):</label> <span>{{ user.checkout_choices.tutorial_morning }}</span></div>
+            {% endif %}
+            {% if user.checkout_choices.tutorial_afternoon %}
+                <div><label>Tutorial (afternoon):</label> <span>{{ user.checkout_choices.tutorial_afternoon }}</span></div>
+            {% endif %}
+            {% if user.checkout_choices.tshirt_size %}
+                <div><label>T-Shirt size:</label> <span>{{ user.checkout_choices.tshirt_size }}</span></div>
+            {% endif %}
+            {% if user.checkout_choices.food_choice %}
+                <div><label>Food preference:</label> <span>{{ user.checkout_choices.get_food_choice }}</span></div>
+            {% endif %}
+            <a class="btn" style="margin: 1em 0px;" href="{% url checkout_choices %}">Edit choices</a>
+        {% endif %}
+    </div>
+</div>
+
+<hr />
+
+<div class="dashboard-panel">
+    <div class="dashboard-panel-header">
         <h3>{% trans "Speaking" %}</h3>
         <div class="pull-right header-actions">
             {% if not user.speaker_profile %}

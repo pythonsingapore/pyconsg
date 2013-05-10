@@ -1,0 +1,13 @@
+{% extends "site_base_one_column.html" %}
+{% load bootstrap_tags i18n %}
+
+{% block head_title %}{% trans "Change Checkout Choices" %} | {{ block.super }}{% endblock %}
+
+{% block body %}
+<h2>{% trans "Change your conference settings" %}</h2>
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ form|as_bootstrap }}
+    <input class="btn btn-primary" type="submit" value="Save changes" /> or <a href="{% url dashboard %}">Cancel</a>
+</form>
+{% endblock body %}

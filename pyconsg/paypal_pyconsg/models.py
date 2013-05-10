@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 FOOD_CHOICES = (
-    ('', '----------'),
+    ('', 'No preference'),
     ('V', 'Vegetarian'),
     ('VG', 'Vegan'),
 )
@@ -84,3 +84,9 @@ class CheckoutChoices(models.Model):
         verbose_name=_('Food preference'),
         null=True, blank=True,
     )
+
+    def get_food_choice(self):
+        for choice in FOOD_CHOICES:
+            if choice[0] == self.food_choice:
+                return choice[1]
+        return ''

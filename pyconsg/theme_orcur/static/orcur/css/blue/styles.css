@@ -53,3 +53,8 @@ a {
 .push-top {
     margin-top: 1em;
 }
+
+.dashboard-checkout-choices label {
+    float: left;
+    margin-right: 1em;
+}

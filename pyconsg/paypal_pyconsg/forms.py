@@ -15,6 +15,40 @@ from paypal_express_checkout.forms import SetExpressCheckoutFormMixin
 from .models import CheckoutChoices, FOOD_CHOICES, TSHIRT_CHOICES
 
 
+class CheckoutChoicesForm(forms.ModelForm):
+    class Meta:
+        model = CheckoutChoices
+        fields = (
+            'tutorial_morning', 'tutorial_afternoon', 'tshirt_size',
+            'food_choice')
+
+    tutorial_morning = forms.ModelChoiceField(
+        label=_('Tutorial (morning)'),
+        queryset=Presentation.objects.filter(
+            proposal_base__kind__slug='tutorial',
+            slot__start__lte=datetime.time(13, 0)),
+        required=False,
+    )
+
+    tutorial_afternoon = forms.ModelChoiceField(
+        label=_('Tutorial (afternoon)'),
+        queryset=Presentation.objects.filter(
+            proposal_base__kind__slug='tutorial',
+            slot__start__gt=datetime.time(13, 0)),
+        required=False,
+    )
+
+
+    def __init__(self, user, *args, **kwargs):
+        kwargs.update({'instance': user.checkout_choices, })
+        super(CheckoutChoicesForm, self).__init__(*args, **kwargs)
+        if not user.checkout_choices.tutorial_morning:
+            self.fields.pop('tutorial_morning')
+
+        if not user.checkout_choices.tutorial_afternoon:
+            self.fields.pop('tutorial_afternoon')
+
+
 class PyconsgSetExpressCheckoutForm(SetExpressCheckoutFormMixin):
     student_rate = forms.BooleanField(
         label=_('I am a student'),
