@@ -13,7 +13,7 @@ django-debug-toolbar==0.9.4
 django-libs==0.14.1
 django-filer==0.9.3
 django-compressor==1.3
--e git+git://github.com/bitmazk/django-paypal-express-checkout.git@aa3eb7fa1956527781e77baf54bd188093653652#egg=paypal_express_checkout
+django-paypal-express-checkout==0.4.1
 South==0.7.6
 
 
