@@ -2,11 +2,25 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
+from symposion.schedule.models import Presentation
+
 from proposals_pyconsg.models import (
     TalkProposal,
     TutorialProposal,
     StartupBoothProposal,
 )
+
+
+class PresentationAdmin(admin.ModelAdmin):
+    list_display = [
+        'title', 'speaker', 'speaker_user_email', 'slot', 'proposal_kind',
+    ]
+
+    def proposal_kind(self, obj):
+        return obj.proposal_base.kind
+
+    def speaker_user_email(self, obj):
+        return obj.speaker.user.email
 
 
 class TalkProposalAdmin(admin.ModelAdmin):
@@ -42,3 +56,6 @@ class StarupBoothProposalAdmin(admin.ModelAdmin):
 admin.site.register(TalkProposal, TalkProposalAdmin)
 admin.site.register(TutorialProposal, TutorialProposalAdmin)
 admin.site.register(StartupBoothProposal, StarupBoothProposalAdmin)
+
+admin.site.unregister(Presentation)
+admin.site.register(Presentation, PresentationAdmin)
