@@ -16,6 +16,8 @@ class PresentationAdmin(admin.ModelAdmin):
         'title', 'speaker', 'speaker_user_email', 'slot', 'proposal_kind',
     ]
 
+    list_filter = ['proposal_base__kind__name', ]
+
     def proposal_kind(self, obj):
         return obj.proposal_base.kind
 
