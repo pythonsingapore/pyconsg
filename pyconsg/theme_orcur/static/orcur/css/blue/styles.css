@@ -54,6 +54,15 @@ a {
     margin-top: 1em;
 }
 
+#pyconLogo {
+    display: block;
+    margin-left: auto;
+    margin-top: 30px;
+    width: 200px;
+    margin-right: auto;
+    text-align: center;
+}
+
 .dashboard-checkout-choices label {
     float: left;
     margin-right: 1em;
