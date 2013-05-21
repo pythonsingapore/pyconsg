@@ -83,7 +83,7 @@
 
 <div class="six columns omega">
     <div class="container-box-inner">
-        <p>{% trans "The <strong>conference ticket</strong> entitles you to attend the main conferende on June 14-15." %}</p>
+        <p>{% trans "The <strong>conference ticket</strong> entitles you to attend the main conference on June 14-15." %}</p>
         <p>{% trans "You can also attend up to two <strong>tutorials</strong> on June 13 (one in the morning and one in the afternoon). Check out the <a href='/schedule/list/' target='_blank'>Conference Talk List</a> to find out more about the tutorials." %}</p>
         <p>{% trans "Please note that your tutorial of choice might be canceled if we don't get enough participants. In that case you can chose another tutorial." %}</p>
         <p>{% trans "If you buy a conference ticket at <strong>student rate</strong> you need to show evidence of student ID at the conference registration." %}</p>
@@ -107,9 +107,9 @@
 
     $("#id_tutorial_morning, #id_tutorial_afternoon").change(function() {
         if ($("#id_tutorial_morning").val() && $("#id_tutorial_afternoon").val()) {
-           $("#tutorialPrice").text("S$100.00");
+            $("#tutorialPrice").text("S${{ form.tutorial_item.value|add:form.tutorial_item.value }}");
         } else if ($("#id_tutorial_morning").val() || $("#id_tutorial_afternoon").val()) {
-           $("#tutorialPrice").text("S$50.00");
+            $("#tutorialPrice").text("S${{ form.tutorial_item.value }}");
         } else {
            $("#tutorialPrice").text("S$0.00");
         }

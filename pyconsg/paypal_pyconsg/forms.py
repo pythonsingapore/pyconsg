@@ -49,6 +49,63 @@ class CheckoutChoicesForm(forms.ModelForm):
             self.fields.pop('tutorial_afternoon')
 
 
+class PyconsgGroupSetExpressCheckoutForm(SetExpressCheckoutFormMixin):
+    amount_conference_tickets = forms.IntegerField(
+        label=_('Conference tickets'),
+        required=False,
+    )
+
+    amount_student_tickets = forms.IntegerField(
+        label=_('Conference tickets (student rate)'),
+        required=False,
+    )
+
+    amount_tutorials = forms.IntegerField(
+        label=_('Tutorial tickets'),
+        required=False,
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(PyconsgGroupSetExpressCheckoutForm, self).__init__(
+            *args, **kwargs)
+        self.conference_item = Item.objects.get(identifier='conference-early')
+        self.student_item = Item.objects.get(
+            identifier='conference-student-early')
+        self.tutorial_item = Item.objects.get(identifier='tutorial-early')
+
+    def clean(self):
+        data = self.cleaned_data
+        if (not data.get('amount_conference_tickets')
+                and not data.get('amount_student_tickets')
+                and not data.get('amount_tutorials')):
+            raise forms.ValidationError(
+                'You have to enter at least one conference ticket or one'
+                ' tutorial.')
+        return data
+
+    def get_items_and_quantities(self):
+        """
+        Returns the items and quantities.
+
+        Should return a list of tuples.
+
+        """
+        data = self.cleaned_data
+        result = []
+        amount_conference_tickets = data.get('amount_conference_tickets')
+        if amount_conference_tickets:
+            result.append((self.conference_item, amount_conference_tickets))
+
+        amount_student_tickets = data.get('amount_student_tickets')
+        if amount_student_tickets:
+            result.append((self.student_item, amount_student_tickets))
+
+        amount_tutorials = data.get('amount_tutorials')
+        if amount_tutorials:
+            result.append((self.tutorial_item, amount_tutorials))
+        return result
+
+
 class PyconsgSetExpressCheckoutForm(SetExpressCheckoutFormMixin):
     student_rate = forms.BooleanField(
         label=_('I am a student'),

@@ -56,6 +56,7 @@ urlpatterns += patterns(
         name='account_logout'),
     url(r'^account/', include('account.urls')),
 
+    url(r'^checkout/group/', include('paypal_pyconsg.group_checkout_urls')),
     url(r'^checkout/', include('paypal_express_checkout.urls')),
 
     url(r'^schedule/', include('symposion.schedule.urls')),
