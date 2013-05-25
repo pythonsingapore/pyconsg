@@ -27,6 +27,7 @@ class CheckoutChoicesForm(forms.ModelForm):
         queryset=Presentation.objects.filter(
             proposal_base__kind__slug='tutorial',
             slot__start__lte=datetime.time(13, 0)),
+        empty_label=None,
         required=False,
     )
 
@@ -35,6 +36,7 @@ class CheckoutChoicesForm(forms.ModelForm):
         queryset=Presentation.objects.filter(
             proposal_base__kind__slug='tutorial',
             slot__start__gt=datetime.time(13, 0)),
+        empty_label=None,
         required=False,
     )
 
