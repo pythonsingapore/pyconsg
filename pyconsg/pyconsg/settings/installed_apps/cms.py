@@ -3,6 +3,7 @@ CMS_TEMPLATES = (
     ('homepage.html', 'Home'),
     ('news.html', 'News'),
     ('speakers.html', 'Speakers'),
+    ('startups.html', 'Startups'),
     ('venue.html', 'Venue'),
     ('proposals.html', 'Proposals'),
     ('sponsorship.html', 'Sponsorship'),

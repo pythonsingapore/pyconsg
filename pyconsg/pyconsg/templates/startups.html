@@ -1,0 +1,36 @@
+{% extends "site_base.html" %}
+{% load i18n boxes_tags sponsorship_tags pyconsg_tags %}
+{% load url from future %}
+
+{% block head_title_base %}{% trans "Startups" %} | {{ block.super }}{% endblock %}
+
+{% block body_base %}
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="twelve columns alpha">
+            <div class="container-box-inner">
+                <h2>{% trans "Startups" %}</h2>
+                <div class="em-medium">
+                    <p>{% box "startups_intro" %}</p>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% get_startups as startups %}
+{% for startup in startups %}
+    <div class="container container-twelve">
+        <div id="counter-container" class="twelve columns container-box">
+            <div class="twelve columns alpha">
+                <div class="container-box-inner">
+                    <h2>{{ startup.title }}</h2>
+                    <div class="em-medium">
+                        {{ startup.description }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock body_base %}
