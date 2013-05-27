@@ -12,7 +12,8 @@ class CheckoutChoicesAdmin(admin.ModelAdmin):
         'tshirt_size', ]
     search_fields = [
         'user__email', 'user__first_name', 'user__last_name',
-        'transaction__transaction_id', ]
+        'transaction__transaction_id', 'tutorial_morning__title',
+        'tutorial_afternoon__title']
 
     def user__email(self, obj):
         return obj.user.email
