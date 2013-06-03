@@ -10,7 +10,8 @@ class CheckoutChoicesAdmin(admin.ModelAdmin):
         'user', 'user__email', 'transaction', 'transaction__status',
         'is_student', 'has_conference_ticket', 'tutorial_morning',
         'tutorial_afternoon', 'tshirt_size', ]
-    list_filter = ['transaction__status', ]
+    list_filter = [
+        'transaction__status', 'has_conference_ticket', 'is_student']
     search_fields = [
         'user__email', 'user__first_name', 'user__last_name',
         'transaction__transaction_id', 'tutorial_morning__title',
