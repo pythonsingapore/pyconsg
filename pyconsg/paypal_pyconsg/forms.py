@@ -70,10 +70,10 @@ class PyconsgGroupSetExpressCheckoutForm(SetExpressCheckoutFormMixin):
     def __init__(self, *args, **kwargs):
         super(PyconsgGroupSetExpressCheckoutForm, self).__init__(
             *args, **kwargs)
-        self.conference_item = Item.objects.get(identifier='conference-early')
+        self.conference_item = Item.objects.get(identifier='conference')
         self.student_item = Item.objects.get(
-            identifier='conference-student-early')
-        self.tutorial_item = Item.objects.get(identifier='tutorial-early')
+            identifier='conference-student')
+        self.tutorial_item = Item.objects.get(identifier='tutorial')
 
     def clean(self):
         data = self.cleaned_data
@@ -156,10 +156,10 @@ class PyconsgSetExpressCheckoutForm(SetExpressCheckoutFormMixin):
 
     def __init__(self, *args, **kwargs):
         super(PyconsgSetExpressCheckoutForm, self).__init__(*args, **kwargs)
-        self.conference_item = Item.objects.get(identifier='conference-early')
+        self.conference_item = Item.objects.get(identifier='conference')
         self.student_item = Item.objects.get(
-            identifier='conference-student-early')
-        self.tutorial_item = Item.objects.get(identifier='tutorial-early')
+            identifier='conference-student')
+        self.tutorial_item = Item.objects.get(identifier='tutorial')
 
     def clean(self):
         data = self.cleaned_data
