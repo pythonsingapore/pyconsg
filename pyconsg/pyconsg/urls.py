@@ -4,6 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic import TemplateView
 from django.views.generic.simple import direct_to_template
 
 import symposion.views
@@ -57,7 +58,9 @@ urlpatterns += patterns(
     url(r'^account/', include('account.urls')),
 
     url(r'^checkout/group/', include('paypal_pyconsg.group_checkout_urls')),
-    url(r'^checkout/', include('paypal_express_checkout.urls')),
+    url(r'^checkout/',
+        TemplateView.as_view(template_name='checkout_closed.html')),
+    # url(r'^checkout/', include('paypal_express_checkout.urls')),
 
     url(r'^schedule/', include('symposion.schedule.urls')),
     url(r'^dashboard/checkout-choices/', include('paypal_pyconsg.urls')),

@@ -1,0 +1,17 @@
+{% extends "site_base.html" %}
+{% load i18n boxes_tags %}
+{% load url from future %}
+
+{% block head_title_base %}{% trans "Checkout Closed" %} | {{ block.super }}{% endblock %}
+
+{% block body_base %}
+<div class="container container-twelve">
+    <div id="counter-container" class="twelve columns container-box">
+        <div class="twelve columns alpha">
+            <div class="container-box-inner">
+                {% box "checkout_closed" %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body_base %}
