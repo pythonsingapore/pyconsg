@@ -1,0 +1,3 @@
+[submodule "pyconsg/submodules/bootstrap"]
+	path = pyconsg/submodules/bootstrap
+	url = https://github.com/twbs/bootstrap
