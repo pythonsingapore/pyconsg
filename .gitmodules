@@ -1,3 +1,0 @@
-[submodule "pyconsg/submodules/bootstrap"]
-	path = pyconsg/submodules/bootstrap
-	url = git://github.com/twitter/bootstrap.git
